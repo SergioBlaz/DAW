@@ -19,23 +19,20 @@ var alumnado = {
     },
     impInforme: function(alum){
         console.log("Informe completo del alumno.");
-
         for(var prop in alum){
-
-            if(typeof alum[prop] !== "function"){
-
+            if (typeof alum[prop] === "string" || typeof alum[prop]=== "number"){
                 console.log(`${prop} : ${alum[prop]}`);
-
-            }else if(typeof alum[prop] === "object"){
-
-                for(var prop2 in alum[prop]){
-
-                    console.log(`${prop} :  ${prop2}, ${alum[prop][prop2]}`);
-
-                }
-            }else{
-                console.log(`${prop} es una función`);
+            } else if (typeof alum[prop] === "function"){
+                console.log(`${prop} es una función.`);
+            }else if (Array.isArray(alum[prop])){
+                console.log(`${prop} : ${alum[prop]}`)
             }
+            else if (typeof alum[prop] === "object"){
+                for (var prop2 in alum[prop]){
+                    console.log(`La propiedad ${prop} contiene ${prop2} con el valor ${alum[prop][prop2]}`);
+                }
+            }
+            
         }
     }
 }
