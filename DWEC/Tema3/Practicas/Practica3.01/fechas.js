@@ -3,7 +3,8 @@
 function fecha(){
     var dias = ["Lunes","Martes","Miercoles","Jueves","Viernes","Sábado","Domingo"];
     var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Sptiembre","Octubre","Noviembre","Diciembre"];
-
+    
+    //Intervalo que muestra la fecha cada 5 segundos seleccionando de las arrays dias y meses para que estén debidamente formateados.
     var intervalo = setInterval( ()=> {
         var fecha = new Date();
 

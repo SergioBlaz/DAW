@@ -1,11 +1,13 @@
 "use strict";
 
 function temporizador(min, seg) {    
+
     if(seg<=59 && seg >=0 && min >=0){
         var totalTime = ((min*60)+seg)*1000;
         var minutos = min;
         var segundos = seg;
-
+        
+        //Intervalo que calula y actualiza cada segundo el tiempo que ha pasado hasta que finalice el tiempo introducido
         var interval = setInterval(() => {
             console.log(`Quedan ${minutos}:${segundos} `);
             

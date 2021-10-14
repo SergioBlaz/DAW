@@ -6,7 +6,9 @@ function solicitarDNI() {
     var letrasDNI = "";
     var contador = 1;
     console.log("Por favor, espere 20 segundos. Gracias.")
-
+    
+    //Intervalo que lee el numero de DNI cada 20 segundos, calcula la letra que le pertenece según el orden de la variable
+    //codigoControl y la añade a un array, cuando reciba -1 detiene la ejecucion y muestra la array
     var interval = setInterval(() => {
         numeroDNI = prompt(`Introduzca el número de su DNI (Sin letra): `);
         
