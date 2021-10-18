@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio07</title>
-    
+    <script src="Ejercicio04.js"></script>
+    <link rel="stylesheet" href="Ejercicio04.css">
   </head>
   <body>
     <p>
       <input type="text" id="texto"/>
-      <button onclick="addText(document.getElementById('texto').value),document.getElementById('boton').value">Añadir fila</button>
+      <button onclick="addText(document.getElementById('texto').value, document.getElementById('boton'))">Añadir fila</button>
     </p>
     <table>
       <thead>
@@ -23,13 +24,12 @@
         <tr>
           <!-- Este código lo debe generar dinámicamente INICIO -->
           <td id="fila1">Ejemplo de contenido</td>
-          <td id="boton">
-            <button onclick="toCani('fila1')">Caniar</button>
+          <td>
+            <button id="boton" onclick="toCani('fila1')">Caniar</button>
           </td>
           <!-- FIN del código generado dinámicamente -->
         </tr>
       </tbody>
     </table>
-    <script src="Ejercicio04.js"></script>
   </body>
 </html>
