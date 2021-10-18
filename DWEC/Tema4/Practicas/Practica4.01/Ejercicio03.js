@@ -1,6 +1,7 @@
 "use strict";
 
-function temporizador(min, seg) {    
+//Función que crea un temporizador con los datos obtenidos y muestra la cuenta atrás
+function temporizador(min, seg){
 
     if(seg<=59 && seg >=0 && min >=0){
         
@@ -10,7 +11,8 @@ function temporizador(min, seg) {
         
         //Intervalo que calula y actualiza cada segundo el tiempo que ha pasado hasta que finalice el tiempo introducido
         var interval = setInterval(() => {
-            console.log(`Quedan ${minutos}:${segundos} `);
+
+            reemplazarTexto(`${minutos}:${segundos}`);
             
             if(segundos > 0){
                 segundos -- ;
@@ -24,12 +26,25 @@ function temporizador(min, seg) {
         }, 1000);
 
         var timeout = setTimeout(() => {
-            console.log("TIEMPO!!");
+            reemplazarTexto("TIMEOUT!!");
+
             clearInterval(interval);
+
         }, totalTime+1000);
         
     }else{
-        console.log("EROR: Datos introducidos no válidos!")
+        reemplazarTexto("Error. Datos no válidos.")
     }
+
 }
-temporizador(0,3);
+
+//Función para reemplazar el contenido de un elemento (con id)
+function reemplazarTexto(contenido){
+    var d = document;
+    var pOld = d.querySelector('#rep');
+    var pNew = d.createElement('p');
+    pNew.setAttribute("id","new");
+    pNew.innerHTML = contenido;
+    pOld.parentNode.replaceChild(pNew,pOld);
+    pNew.setAttribute("id","rep");
+}
