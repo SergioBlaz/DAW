@@ -3,12 +3,13 @@
 //Contador para el número de fila
 var ij=1;
 
+let d = document;
+
 //Función para añadir a la tabla el texto y el botón
 function addText(texto,boton){
     ij++;
 
     //Referencias al documento original
-    var d = document;
     var bodyTabla = d.querySelector('#bodyTabla');
     
     //Creación de los elementos a insertar
@@ -31,9 +32,7 @@ function addText(texto,boton){
 
 //Función para cambiar el texto a formato "CANI"
 function toCani(id){
-    //Referencia al documento
-    var d = document;
-
+    
     //Valor del elemento a cambiar
     var texto = d.getElementById(id).innerText;
 
@@ -54,8 +53,6 @@ function toCani(id){
 
 //Función para reemplazar texto con una id (elemento td)
 function reemplazarTextoTabla(contenido,id){
-    //Referencia al documento
-    var d = document; 
     //Selección del elemento a sustituir (OJO AL SELECTOR CSS RULES -> ( # + id ))
     var tdOld = d.querySelector(`#${id}`);
     //Creación del nuevo elemento
