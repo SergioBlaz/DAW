@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintarrajea</title>
+    <link rel="stylesheet" href="Ejercicio01.css">
+</head>
+<body>
+    <div id="selector">
+        <table >
+            <tbody>
+                <tr>
+                    <td class="pintarRojo" onclick="seleccionarColor('Rojo')">Rojo</td>
+                    <td class="pintarVerde" onclick="seleccionarColor('Verde')">Verde</td>
+                    <td class="pintarAmarillo" onclick="seleccionarColor('Amarillo')">Amarillo</td>
+                    <td class="pintarAzul" onclick="seleccionarColor('Azul')">Azul</td>
+                    <td class="pintarBlanco" onclick="seleccionarColor('Blanco')">Blanco</td>
+                </tr>
+                <tr>
+                    <td>Color Seleccionado</td>
+                    <td id="colorSeleccionado"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="lienzo">
+
+    </div>
+    <button onclick="borrarLienzo()">Borrar Lienzo</button>
+    <script src="Ejercicio01.js"></script>
+</body>
+</html>
