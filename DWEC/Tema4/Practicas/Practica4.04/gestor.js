@@ -57,6 +57,7 @@ function addTarea(){
 
 //Función para borrar una tarea de la lista de pendientes
 function delTarea(idDel){
+    console.log(d.getElementById(`tarea${idDel}`));
     pendientes.removeChild(d.getElementById(`tarea${idDel}`));
 }
 
