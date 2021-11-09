@@ -1,0 +1,19 @@
+.vacio{
+    color:red;
+    font-style: italic;
+}
+.type1{
+    color:aqua;
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+}
+.type2{
+    color:greenyellow;
+    font-size:xx-large;
+}
+.type3{
+    width: fit-content;
+    background-color: black;
+    color:antiquewhite;
+    font-style: oblique;
+}

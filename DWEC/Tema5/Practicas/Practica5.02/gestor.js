@@ -5,11 +5,11 @@ let d = document;
 
 let cTareas = 0; 
     
-    
     //Evento para añadir funcionalidad a los botones estáticos y los que se generan de forma dinámica.
     d.addEventListener("click", (e) => {
         if (e.target.id == 'add'){
             addTarea();
+            
         }else if ( e.target.id == 'sho'){
             showTareas();
 
@@ -39,7 +39,7 @@ let cTareas = 0;
         e.preventDefault();
     }, false);
     //Dependiendo del id de los elementos en los que voy a soltar el elemento seleccionado realizo
-    //una acción o otra.
+    //una acción u otra y si están dentro de la lista pendientes al hacer drop se pueden reordenar.
     d.addEventListener("drop",(e) => {
         e.preventDefault();
 
@@ -51,7 +51,7 @@ let cTareas = 0;
 
         }
         
-        //Guardo el elemneto sobre el que estoy al soltar
+        //Guardo el elemneto sobre el que estoy al soltar para ordenar las tareas dentro de pendientes
         var elemento = e.target;
         
         if(elemento.parentNode.id == "pendientes" && elemento.draggable === true){
