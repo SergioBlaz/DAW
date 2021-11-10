@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Rellene el siguienche formulario</h1>
+        <form name="formulario" action="formulario.php" method="POST">
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" maxlength="25" tabindex="1" onfocus="onfocus" required><br><br>
+            
+            <label for="apellido1">1º Apellido: </label>
+            <input type="text" name="apellido1" maxlength="50" tabindex="2" required><br><br>
+            
+            <label for="apellido2">2º Apellido: </label>
+            <input type="text" name="apellido2" maxlength="50" tabindex="3" required><br><br>
+            
+            <label for="email">Email: </label>
+            <input type="email" name="correo" maxlength="75" tabindex="4" required><br><br>
+            
+            <label for="url">Web Personal: </label>
+            <input type="url" name="url" maxlength="55" tabindex="5"><br><br>
+            
+            <p>Seleciona tu sexo:</p>
+            <div id="sexo">
+                <input type="radio" id="masculino" name="sexo" value="masculino" checked="checked" tabindex="6">
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="femenino" name="sexo" value="femenino" tabindex="7">
+                <label for="femenino">Femenino</label>
+                <input type="radio" id="otro" name="sexo" value="otro" tabindex="8">
+                <label for="otro">Otro</label>
+            </div><br><br>
+            
+            <label for="convivientes">Nº Convivientes: </label>
+            <input type="number" name="convivientes" min="0" required tabindex="9"><br><br>
+            
+            <p>Selecciona tus aficiones</p>
+            <div id="aficiones">
+                <input type="checkbox" value="1" id="aficion1" name="check" tabindex="10"/><label for="aficion1">Series</label><br/>
+                <input type="checkbox" value="2" id="aficion2" name="check" tabindex="11"/><label for="aficion2">Videojuegos</label><br/>
+                <input type="checkbox" value="3" id="aficion3" name="check" tabindex="12"/><label for="aficion3">Fiestas</label><br/>
+                <input type="checkbox" value="4" id="aficion4" name="check" tabindex="13"/><label for="aficion4">Lanzar Cocos</label><br/>
+            </div>
+            
+            <p>Selecciona la opción deseada</p>
+            <select name="combo" required>
+                <option value="1">Menú 1</option>
+                <option value="2">Menú 2</option>
+                <option value="3">Menú 3</option>
+                <option value="4">Menú Especial</option>
+            </select><br><br>
+            
+            <input type="submit" value="Enviar Formulario">
+        </form>
+    </body>
+</html>

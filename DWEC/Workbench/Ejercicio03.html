@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio03</title>
+</head>
+<body>
+    <h1>Biblioteca de Discos</h1>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Formulario para nuevos discos</legend><br>
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" id="nombre"><br><br>
+            <label for="interprete">Grupo o Interprete: </label>
+            <input type="text" name="interprete" id="interprete"><br><br>
+            <label for="anyo">Año de publicación: </label>
+            <input type="text" name="anyo" id="anyo"><br><br>
+            <label>Tipo: </label>
+            <select id="seleccion">
+                <option value="rock">Rock</option>
+                <option value="progressive">Progressive</option>
+                <option value="punk">Punk</option>
+                <option value="trash">Trash</option>
+            </select><br><br>
+            <label for="localizacion">Nº Estantería: </label>
+            <input type="number" name="localizacion" id="localización" min="0"><br><br>
+            <label for="prestado">Prestado: </label>
+            <input type="checkbox" name="prestado" id="prestado">
+        </fieldset><br>
+        <input type="button" name="guardar" id="guardar" value="Guardar Disco">
+    </form>
+    <script src="Ejercicio03.js"></script>
+</body>
+</html>
