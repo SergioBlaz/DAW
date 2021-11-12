@@ -27,7 +27,6 @@
     /* Función para comprobar que el usuario y la clave introducidos 
      * están el la lista, los almacena y los devuelve, si no, devuelve false
      */
-    
     function comprobar_usuario($usuario,$clave){
         if($usuario === "juan" and $clave === "1234"){
             $usu['nombre'] = "juan";

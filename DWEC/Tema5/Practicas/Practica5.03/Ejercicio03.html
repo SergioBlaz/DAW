@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio03</title>
+    <link rel="stylesheet" href="Ejercicio03.css">
 </head>
 <body>
     <h1>Biblioteca de Discos</h1>
@@ -16,7 +17,7 @@
             <label for="interprete">Grupo o Interprete: </label>
             <input type="text" name="interprete" id="interprete"><br><br>
             <label for="anyo">Año de publicación: </label>
-            <input type="text" name="anyo" id="anyo"><br><br>
+            <input type="number" name="anyo" id="anyo" min="0" max="2021"><br><br>
             <label>Tipo: </label>
             <select id="seleccion">
                 <option value="rock">Rock</option>
@@ -25,12 +26,25 @@
                 <option value="trash">Trash</option>
             </select><br><br>
             <label for="localizacion">Nº Estantería: </label>
-            <input type="number" name="localizacion" id="localización" min="0"><br><br>
+            <input type="number" name="localizacion" id="localizacion" min="0"><br><br>
             <label for="prestado">Prestado: </label>
             <input type="checkbox" name="prestado" id="prestado">
         </fieldset><br>
         <input type="button" name="guardar" id="guardar" value="Guardar Disco">
     </form>
+    <table id="almacen">
+        <tr>
+            <th colspan="6">Discos Alamacenados</th>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <th>Interprete</th>
+            <th>Año de Publicación</th>
+            <th>Tipo</th>
+            <th>Nº Estantería</th>
+            <th>Prestasdo</th>
+        </tr>
+    </table>
     <script src="Ejercicio03.js"></script>
 </body>
 </html>
