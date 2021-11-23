@@ -1,27 +1,23 @@
 "use strict";
 
-
 export class Curso {
     constructor(pNom, pAul, pMod){
         this.nombre = pNom;
         this.aula = pAul;
-        //Modulos es un array de todos los módulos
         this.modulos = pMod;
-
         this.alumnado = new Array();
     }
 
     matricular = function (alu) {
-        //Comprobar prototype alu.
-        this.alumnado.push(alu);
-
+        if(alu.constructor.name == "Alumnado"){
+            this.alumnado.push(alu);
+        }
     }
 
-    getModulos = function(){
-        let modulos = document.createElement("tr");
-        
+    getProfesoradoModulos = function(){
+        let filaModulos="";
         modulos.forEach((value) => {
-            modulos.innerHTML += `<td>${value.getProfesorado()}</td>`;
+            filaModulos.innerHTML += `<tr>${value.getProfesorado()}</tr>`;
         })
         
         return modulos;
@@ -37,18 +33,10 @@ export class Curso {
 
     mostrarAlumnado = function() {
         let filaAlumnos = "";
-
         this.alumnado.forEach((value) => {
-
             filaAlumnos += `<tr>${value.mostrarDatosAlumno()}</tr>`;
-
         });
         
         return filaAlumnos;
-    }
-
-    mostrarInforme = function(){
-        mostrarAlumnado();
-        
     }
 }

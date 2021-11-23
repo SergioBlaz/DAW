@@ -20,7 +20,12 @@ export class Alumnado {
     }
 
     elegirModulo = function (modulo) {
-        this.modulo.push(modulo);
+        if(modulo.constructor.name == "Modulos"){
+            this.modulo.push(modulo);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     esMayor = function(){
@@ -44,13 +49,15 @@ export class Alumnado {
     }
 
     mostrarModulosAlumno = function(){
-        let modulos = document.createElement("tr");
+        let modulosAlumno ="";
 
         this.modulo.forEach((value) => {
-            modulos.innerHTML += `<td>${value.nombre}</td>`;
+            modulosAlumno += `${value.nombre} `;
         });
 
-        return modulos;
+        return `<td>${modulosAlumno}</td>`;
+         
+
     }
 }
 

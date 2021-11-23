@@ -13,7 +13,7 @@
     <body>
         <?php 
         require_once 'cabecera.php';
-        $productos = cargar_productos(array_keys($_SESSION['carrito']));
+        $productos = cargar_productos(array_keys($_SESSION['carrito']));        
         if($productos === FALSE){
             echo "<p>No hay productos en el pedido</p>";
             exit;
@@ -27,7 +27,6 @@
             $des = $producto['Descripcion'];
             $peso = $producto['Peso'];
             $unidades = $_SESSION['carrito'][$cod];
-
             //print_r($producto);
             echo "<tr><td>$nom</td><td>$des</td><td>$peso</td><td>$unidades</td>
                 <td><form action='eliminar.php' method='POST'>

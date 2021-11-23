@@ -28,16 +28,16 @@
                     $nom = $producto['Nombre'];
                     $des = $producto['Descripcion'];
                     $peso = $producto['Peso'];
-                    $stock = $produto['Stock'];
+                    $stock = $producto['Stock'];
                     echo "<tr><td>$nom</td><td>$des</td><td>$peso</td><td>$stock</td>
                     <td><form action='anadir.php' method='POST'>
                     <input type='number' name='unidades' min='1' value='1'>
                     <input type='submit' value='Comprar'>
-                    <input type='hidden' value='$cod'>
+                    <input type='hidden' name='cod' value='$cod'>
                     </form></td></tr>";
                 }
             }
-            echo "</table>";
+            echo "</table>" ;
         ?>
     </body>
 </html>

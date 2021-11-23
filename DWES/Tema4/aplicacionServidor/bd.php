@@ -104,8 +104,10 @@
             $bd->beginTransaction();
             $hora = date("Y-m-d H:i:s",time());
 
-            $ins ="INSERT into pedidos(Fecha,Enviado,Restaurante) values ('$hora',0,$codRes)";
+            $ins="INSERT into pedidos(Fecha, Enviado, Restaurantes) values ('$hora',0,$codRes)";
+            
             $resul=$bd->query($ins);
+            
             if(!$resul) {
                 return false;
             }

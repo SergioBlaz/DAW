@@ -12,18 +12,18 @@ export class Modulos {
     }
 
     impartirModulo = function(pProf){
-        //Comprobar prototype de profesorado    
-        this.profesorado.push(pProf);
-    
+        if(pProf.constructor.name == "Profesorado"){  
+            this.profesorado.push(pProf);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     getProfesorado = function() {
-        let profesorado = d.createElement("tr");
-        
         profesorado.forEach((value) => {
             profesorado.innerHTML+= `<td>${value.nombre}</td>`
         });
-        
         return profesorado;
     }
 
