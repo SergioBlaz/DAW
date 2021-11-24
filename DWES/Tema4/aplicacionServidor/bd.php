@@ -101,7 +101,9 @@
     function insertar_pedido($carrito, $codRes){
         try{
             $bd = new PDO(CADENA_CONEXION, USUARIO_CONEXION, CLAVE_CONEXION);
+            
             $bd->beginTransaction();
+            
             $hora = date("Y-m-d H:i:s",time());
 
             $ins="INSERT into pedidos(Fecha, Enviado, Restaurantes) values ('$hora',0,$codRes)";
@@ -111,14 +113,23 @@
             if(!$resul) {
                 return false;
             }
+
             $pedido = $bd->lastInsertId();
+            
             foreach($carrito as $codProd=>$unidades) {
                 $ins = "INSERT into pedidosproductos(CodPed, CodProd, Unidades) VALUES ($pedido, $codProd,$unidades)";
+                
+                $upd = "UPDATE productos SET Stock=Stock-$unidades WHERE CodProd=$codProd";
+
+                $resul = $bd->query($upd);
+
                 $resul = $bd->query($ins);
+                
                 if(!$resul){
                     $bd->rollBack();
                     return false;
                 }
+
             }
             $bd->commit();
             return $pedido;
