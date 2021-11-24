@@ -11,7 +11,7 @@
     </head>
     <body>
         <?php
-            require_once 'cabecera.php';
+            require 'cabecera.php';
             $categorias = cargar_categoria($_GET['categoria']);
             $productos = cargar_productos_categorias($_GET['categoria']);
             if($categorias === false or $productos === false){
@@ -29,12 +29,21 @@
                     $des = $producto['Descripcion'];
                     $peso = $producto['Peso'];
                     $stock = $producto['Stock'];
-                    echo "<tr><td>$nom</td><td>$des</td><td>$peso</td><td>$stock</td>
-                    <td><form action='anadir.php' method='POST'>
-                    <input type='number' name='unidades' min='1' value='1'>
-                    <input type='submit' value='Comprar'>
-                    <input type='hidden' name='cod' value='$cod'>
-                    </form></td></tr>";
+                    if($stock > 0) {
+                    echo "<tr>
+                            <td>$nom</td>
+                            <td>$des</td>
+                            <td>$peso</td>
+                            <td>$stock</td>
+                            <td>
+                                <form action='anadir.php' method='POST'>
+                                    <input type='number' name='unidades' min='1' value='1'>
+                                    <input type='submit' value='Comprar'>
+                                    <input type='hidden' name='cod' value='$cod'>
+                                </form>
+                            </td>
+                        </tr>";
+                    }
                 }
             }
             echo "</table>" ;

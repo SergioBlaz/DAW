@@ -9,9 +9,12 @@
     //Si existe el código sumamos las unidades
     if (isset($_SESSION['carrito'][$cod])){
         $_SESSION['carrito'][$cod] += $unidades;
+
     } else {
         $_SESSION['carrito'][$cod] = $unidades;
-    }
-    header("Location: carrito.php");
 
+    }
+    
+    //Trás añadir al carrito vuelve a la página anterior
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

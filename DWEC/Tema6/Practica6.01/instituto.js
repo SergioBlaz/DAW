@@ -51,10 +51,15 @@ window.onload = () => {
 
     
     //TESTS
-    var informeAlumnos= document.querySelector(".informeAlumnos");
+    var informeAlumnos= document.querySelector("#datosAlumnos");
     informeAlumnos.innerHTML += daw2.mostrarAlumnado();    
 
-    var notaMedia = document.querySelector(".notaMedia");
+    var notaMedia = document.querySelector("#notaMedia");
     notaMedia.innerHTML = `<tr><td>${daw2.getNotaMediaCurso()}</td></tr>`;
     
+    var modules = document.querySelector("#modulosProfesorado");
+    modulosDaw2.forEach((value) => {
+        modules.innerHTML += value.getNombre();
+    });
+
 }

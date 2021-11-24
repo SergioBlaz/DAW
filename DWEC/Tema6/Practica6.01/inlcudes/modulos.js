@@ -8,7 +8,7 @@ export class Modulos {
     }
 
     getNombre = function(){
-        return this.nombre;
+        return `<td>${this.nombre}</td>`;
     }
 
     impartirModulo = function(pProf){
@@ -22,7 +22,7 @@ export class Modulos {
 
     getProfesorado = function() {
         profesorado.forEach((value) => {
-            profesorado.innerHTML+= `<td>${value.nombre}</td>`
+            profesorado.innerHTML+= `<td>${value.dni}</td><td>${value.nombre}</td><td>${value.apellido}</td>`
         });
         return profesorado;
     }

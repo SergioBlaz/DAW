@@ -15,9 +15,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         
         session_start();
         //QuitarNombreUsuario si no funciona algo
-        $_SESSION['nombreUsuario'] = $_POST['usuario'];
         $_SESSION['usuario'] = $usu;
         $_SESSION['carrito'] = [];
+        $_SESSION['nombreUsuario'] = $_POST['usuario'];
 
         header("Location: categorias.php");
         return;
@@ -32,6 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <meta charset = "UTF-8">
     </head>
     <body>
+        <h1>Inicio de Sesión</h1>
         <?php
             if(isset($_GET["redirigido"])){
                 echo "<p>Haga log-in para continuar</p>";
@@ -42,9 +43,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
         <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
             <label for="usuario">Usuario: </label>
-            <input type="text" id="usuario" name="usuario" value="<?php if(isset($usuario)) echo $usuario; ?>">
+            <input type="text" id="usuario" name="usuario" value="<?php if(isset($usuario)) echo $usuario; ?>"><br><br>
             <label for="clave">Clave: </label>
-            <input type="password" id="clave" name="clave">
+            <input type="password" id="clave" name="clave"><br><br>
             <input type="submit" value="Iniciar Sesión">
         </form>
     </body>
