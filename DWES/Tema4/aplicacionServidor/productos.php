@@ -37,9 +37,10 @@
                             <td>$stock</td>
                             <td>
                                 <form action='anadir.php' method='POST'>
-                                    <input type='number' name='unidades' min='1' value='1'>
-                                    <input type='submit' value='Comprar'>
-                                    <input type='hidden' name='cod' value='$cod'>
+                                <input type='range' min='1' max='$stock' value='1' name='unidades' id='unidades' oninput='this.nextElementSibling.value = this.value'>
+                                <output>1</output>
+                                <input type='submit' value='Comprar'>
+                                <input type='hidden' name='cod' value='$cod'>
                                 </form>
                             </td>
                         </tr>";

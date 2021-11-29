@@ -38,6 +38,6 @@
         echo"</table>";
         ?>
         <hr>
-        <a href ="procesar_pedido.php">Realizar Pedido</a>
+        <a href ="confirmar_pedido.php">Confirmar Pedido</a>
     </body>
 </html>

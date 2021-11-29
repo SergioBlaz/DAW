@@ -19,6 +19,7 @@ export class Alumnado {
         return this.notaMedia;
     }
 
+    //Función para añadir un modulo al alumno.
     elegirModulo = function (modulo) {
         if(modulo.constructor.name == "Modulos"){
             this.modulo.push(modulo);
@@ -28,6 +29,7 @@ export class Alumnado {
         }
     }
 
+    //Función para determinar, a partir de la fecha de nacimiento del alumno, si es mayor de edad.
     esMayor = function(){
         let hoy = new Date();
         let cumpleanos = new Date(this.fNacimiento);
@@ -43,11 +45,13 @@ export class Alumnado {
         }
     }
 
+    //Función que devuleve los valores de los atributos del objeto de la clase alumno.
     mostrarDatosAlumno = function(){
         let datos = `<td>${this.dni}</td><td>${this.nombre}</td><td>${this.apellidos}</td><td>${this.fNacimiento}</td><td>${this.notaMedia}</td>`;
         return datos;
     }
 
+    //Función que muestra los modulos que cada alumno a seleccionado.
     mostrarModulosAlumno = function(){
         let modulosAlumno ="";
 

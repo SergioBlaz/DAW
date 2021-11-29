@@ -2,7 +2,7 @@
 
 import {addTarea, delTarea, endTarea} from "./includes/pendientes.js";
 import {saveTarea, backTarea, showTareas} from "./includes/acabadas.js";
-import {antesTarea, despuesTarea} from "./includes/ordenTareas.js";
+import {antesTarea, despuesTarea} from "./includes/arrastrarTareas.js";
 
 window.onload = () => {
 let d = document;
@@ -12,16 +12,17 @@ var cTareas = 0;
     //Evento para añadir funcionalidad a los botones estáticos y los que se generan de forma dinámica.
     d.addEventListener("click", (e) => {
         if (e.target.id == 'add'){
-            addTarea(cTareas);
+            addTarea(d.querySelector('textarea').value,d.getElementById('pendientes'),cTareas);
+            d.querySelector('textarea').value = "";
             cTareas++;
         }else if ( e.target.id == 'sho'){
-            showTareas();
+            showTareas(d.getElementsByClassName("acabadaOculta"));
         } else if ( e.target.value == 'Borrar'){
-            delTarea(e.target.name);
+            delTarea(d.getElementById('pendientes'),e.target.name);
         } else if ( e.target.value == 'Acabar'){
-            endTarea(e.target.name);
+            endTarea(d.getElementById('acabadas'),e.target.name);
         } else if ( e.target.value == 'Volver'){
-            backTarea(e.target.name);
+            backTarea(d.getElementById('pendientes'),e.target.name);
         } else if ( e.target.value == 'Archivar'){
             saveTarea(e.target.name);
         }
@@ -46,10 +47,10 @@ var cTareas = 0;
         e.preventDefault();
 
         if(e.target.id == "acabadas"){
-            endTarea(elementoArrastrado.id);
+            endTarea(d.getElementById('acabadas'),elementoArrastrado.id);
 
         } else if(e.target.id == "pendientes") {
-            backTarea(elementoArrastrado.id);
+            backTarea(d.getElementById('pendientes'),elementoArrastrado.id);
 
         }
         

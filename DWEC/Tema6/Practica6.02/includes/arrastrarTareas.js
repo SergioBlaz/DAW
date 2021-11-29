@@ -1,6 +1,5 @@
 "use strict";
 
-let d = document;
 //Función para insertar un elemento antes que otro.
 function antesTarea(elemento, e){
     elemento.parentNode.insertBefore(elemento, e);

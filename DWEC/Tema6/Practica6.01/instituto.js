@@ -50,7 +50,7 @@ window.onload = () => {
     daw2.matricular(alu2);
 
     
-    //TESTS
+    //TESTS(No me he aclarado para mostrar la información por pantalla)
     var informeAlumnos= document.querySelector("#datosAlumnos");
     informeAlumnos.innerHTML += daw2.mostrarAlumnado();    
 
