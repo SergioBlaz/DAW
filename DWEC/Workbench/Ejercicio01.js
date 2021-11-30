@@ -1,5 +1,5 @@
 "use strict";
-import {mostrarPeliculas, mostrarSinopsis} from "./includes/mostrar.js";
+import {mostrarPeliculas,llamarPersonaje, mostrarSinopsis} from "./includes/mostrar.js";
 
 window.onload = () =>{
     const url = "https://swapi.dev/api/films";
@@ -21,8 +21,17 @@ window.onload = () =>{
             document.addEventListener("click", (e) => {    
                 if(e.target.nodeName == "LI"){    
                     document.getElementById("sinopsis").innerHTML = mostrarSinopsis(JSON.parse(httpRequest.response),e.target.id);
-                    
-                    
+                    JSON.parse(httpRequest.response).results.map((v) => {
+                        if(`o${v.episode_id}` == e.target.id){
+
+                            console.log(v.characters[0]);
+                            for(let i=0; i<10; i++){
+                                llamarPersonaje(v.characters[0]);
+                                //llamarPersonaje(v.characters[i]);
+                            }
+                        }
+                    });
+
                 }
 
             },

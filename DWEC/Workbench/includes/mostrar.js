@@ -24,16 +24,33 @@ function mostrarSinopsis(peliculas,id){
     return sinopsis;
 }
 
-function mostrarPersonaje(personajes){
-    let listaPersonajes = document.createElement("ul");
+function mostrarPersonaje(data){
+    console.log(data);
+}
 
-    personajes.results.map((v) => {
-        listaPersonajes.innerHTML += `<li>${v.name}</li>`;
-    })
-
-    return listaPersonajes;
+function llamarPersonaje(pUrl){
+    const url = pUrl;
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.open("GET",url,true);
+    httpRequest.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+    );
+    httpRequest.addEventListener("readystatechange", ()=>{
+        if(httpRequest.readyState == 3){
+            console.log("Cargando...");
+        }
+        if(httpRequest.readyState == 4 && httpRequest.satus == 200){
+            //Este código es asíncrono//
+            console.log("A");
+            mostrarPersonaje(JSON.parse(httpRequest.response));
+            
+            //
+        }
+    },
+    true);
 }
 
 
 
-export {mostrarPeliculas, mostrarSinopsis};
+export {mostrarPeliculas,llamarPersonaje, mostrarSinopsis};
