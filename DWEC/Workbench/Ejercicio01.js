@@ -1,6 +1,6 @@
 "use strict";
 
-import {mostrarPeliculas, llamarPersonaje, mostrarSinopsis} from "./includes/mostrar.js";
+import {mostrarPeliculas, llamarPersonajes, mostrarSinopsis} from "./includes/mostrar.js";
 
 window.onload = () =>{
     //Llamada a la api de Star Wars
@@ -11,10 +11,12 @@ window.onload = () =>{
         "Content-Type",
         "application/x-www-form-urlencoded"
     );
+    document.getElementById("info").innerHTML = "<p>Cargando películas...</p>";
     //Evento para el cambio de estado de la llamada a la api
     httpRequest.addEventListener("readystatechange", () => {
         if(httpRequest.readyState == 4 && httpRequest.status == 200){
-            
+            document.getElementById("info").innerHTML = "";
+
             //Unicamente cuando la api nos responda se añadirán las películas al DOM
             document.getElementById("peliculas").appendChild(mostrarPeliculas(JSON.parse(httpRequest.response)));
             
@@ -32,8 +34,7 @@ window.onload = () =>{
                         if(`o${v.episode_id}` == e.target.id){
                             
                             for(let i=0; i<10; i++){
-                                
-                                llamarPersonaje(v.characters[i]);
+                                llamarPersonajes(v.characters[i]);
                             }
                         }
                     });

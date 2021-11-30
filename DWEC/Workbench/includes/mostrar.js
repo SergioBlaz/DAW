@@ -20,7 +20,7 @@ function mostrarSinopsis(peliculas,id){
 }
 
 //Función para llamar a la api de star wars, por un pensonaje concreto y cuando este responda añadirlo a una lista.
-function llamarPersonaje(pUrl){
+function llamarPersonajes(pUrl){
     const url = pUrl;
     var httpRequest = new XMLHttpRequest();
     httpRequest.open("GET",url,true);
@@ -35,6 +35,7 @@ function llamarPersonaje(pUrl){
         }
     }, 
     true);
+    
     httpRequest.send();
 }
-export {mostrarPeliculas, llamarPersonaje, mostrarSinopsis};
+export {mostrarPeliculas, llamarPersonajes, mostrarSinopsis};
