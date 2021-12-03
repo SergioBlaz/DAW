@@ -30,26 +30,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <head>
         <title>Formulario de log-in</title>
         <meta charset = "UTF-8">
-        <link rel="stylesheet" href="styles_login.css">
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <div class="contenedorLogin">
-            <h1>Inicio de Sesión</h1>
-            <?php
-                if(isset($_GET["redirigido"])){
-                    echo "<p>Haga log-in para continuar</p>";
-                }
-                if(isset($err) and $err == true){
-                    echo "<p>Revise el usuario y contraseña</p>";
-                }
-            ?>
-            <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                <label for="usuario">Usuario: </label>
-                <input type="text" id="usuario" name="usuario" value="<?php if(isset($usuario)) echo $usuario; ?>"><br><br>
-                <label for="clave">Clave: </label>
-                <input type="password" id="clave" name="clave"><br><br>
-                <input type="submit" value="Iniciar Sesión">
-            </form>
+        <div class="contenedor">
+            <div class="login">
+                <h1>Inicio de Sesión</h1>
+                <?php
+                    if(isset($_GET["redirigido"])){
+                        echo "<p>Haga log-in para continuar</p>";
+                    }
+                    if(isset($err) and $err == true){
+                        echo "<p class=error>Revise el usuario y contraseña</p>";
+                    }
+                ?>
+                <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                    <label for="usuario">Usuario </label>
+                    <input type="text" id="usuario" name="usuario" value="<?php if(isset($usuario)) echo $usuario; ?>"><br><br>
+                    <label for="clave">Clave </label>
+                    <input type="password" id="clave" name="clave"><br><br>
+                    <input type="submit" value="Iniciar Sesión">
+                </form>
+            </div>
         </div>
     </body>
 </html>
