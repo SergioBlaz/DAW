@@ -1,0 +1,42 @@
+body{
+    background-image: url("./img/backGhibli.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+header{
+    display: flex;
+    justify-content: center;
+}
+h1, h2, li,p {
+    cursor: default;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255, 0.562);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 25px
+}
+.films{
+    width: 580px;
+}
+.description{
+    width: 800px;
+}
+.people{
+    width: 400px;
+}
+.image  {
+    margin-right: 30px;
+}
+img{
+    width: 400px;
+    height: 550px;
+}
+.films ul li:hover{
+    cursor:pointer;
+}

@@ -9,6 +9,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Lista de categorías</title>
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
         <?php require_once 'cabecera.php'; ?>

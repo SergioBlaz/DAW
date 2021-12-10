@@ -1,6 +1,7 @@
 body{
     background-image: url("./img/login_background.jpg");
 }
+/* Página de login */
 .contenedor{
     width: 100%;
     height: 700px;
@@ -13,26 +14,17 @@ body{
     width: 350px;
     background: rgba( 74, 74, 74, 0.65 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 19px );
-    -webkit-backdrop-filter: blur( 19px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 35px;
     text-align: center;
 }
 .error{
-    color: rgb(255, 0, 0);
-}
-h2{
-    position: absolute;
-    text-align: center;
-    background: rgba( 74, 74, 74, 0.65 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 19px );
-    -webkit-backdrop-filter: blur( 19px );
+    background-color: rgba(155, 155, 155, 0.8);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    letter-spacing: 1px;
+    padding: 6px;
+    color: rgb(172, 0, 0);
 }
 p{
     font-size: 1em;
@@ -53,3 +45,27 @@ label{
     font-size: 1em;
     color: rgba(255, 255, 255);
 }
+/* Cabecera */
+header{
+    display: flex;
+    justify-content: center;
+}
+.header{
+    background-color: rgba( 74, 74, 74, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding:5px 40px 10px 40px;
+    text-align: center;
+    width: max-content;
+}
+a{
+    margin: 0 5px 0 0;
+}
+a:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    border-radius: 15px;
+padding:3px;
+}
+/* Página de categorías */

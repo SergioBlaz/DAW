@@ -13,7 +13,6 @@
             if($resul -> rowCount() === 1){
                 return true;
             } else {
-                echo "<h2 class=error>Usuario no registrado</h2>";
                 return false;
             }
         } catch (PDOException $e){

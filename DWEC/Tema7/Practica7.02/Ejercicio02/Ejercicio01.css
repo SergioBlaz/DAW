@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Star-Jedi';
+    src: url('./fonts/StarJedi-DGRW.ttf') format('truetype');
+    src: url('./fonts/StarJedi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Anakin-Mono';
+    src: url('./fonts/anakinmono.ttf') format('truetype');
+    src: url('./fonts/anakinmono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Jedi-Outline';
+    src: url('./fonts/StarJediOutline-y0xm.ttf') format('truetype');
+    src: url('./fonts/StarJediOutline-y0xm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-image: url('./img/back.png');
+}
+.background{
+    background-color: rgba(120,120,120,0.5);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 19px );
+    -webkit-backdrop-filter: blur( 19px );
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 25px;
+    width: 700px;
+}
+h1{
+    font-family:'Star-Jedi';
+    width: 500px ;
+    background-color: rgba(125, 125, 125, 0.8);
+    margin-left: 150px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 25px;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+
+}
+h2{
+    font-family: 'Jedi-Outline';
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+h1, h2, li,p {
+    cursor: default;
+}
+.info{
+    font-family: 'Star-Jedi';
+    color:rgb(100, 0, 0);
+}
+.info p{
+    cursor: wait;
+}
+.peliculas, .sinopsis, .personajes, .caracteristicas{
+    font-family: 'Anakin-Mono';
+}
+.peliculas li{
+    max-width: max-content;
+}
+.sinopsis p{
+    font-size: 1.1em;
+    color: #ffbb00;
+    background-color: rgba(120,120,120,0.5);
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 25px;
+}
+.contenedorPJ{
+    display:flex;
+}
+.personajes{
+    width: 330px;
+}
+.caracteristicas{
+    width: 330px;
+}
+.peliculas li:hover, .personajes li:hover{
+    width: max-content;
+    cursor:pointer;
+    border-bottom: 2px solid black;
+}
