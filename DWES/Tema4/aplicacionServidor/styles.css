@@ -63,9 +63,75 @@ a{
     margin: 0 5px 0 0;
 }
 a:hover{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(141, 141, 141, 0.5);
     border: 1px solid black;
     border-radius: 15px;
-padding:3px;
+    padding:3px;
 }
-/* Página de categorías */
+/*Tablas*/
+table{
+    background-color: rgba(155, 155, 155, 0.884);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding:5px 40px 10px 40px;
+    margin-top:15px;
+    text-align: center;
+    width: max-content;
+}
+.header-table{
+    background-color: rgba(117, 117, 117, 0.884);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding:5px 40px 10px 40px;
+    text-align: center;
+    width: max-content;
+    margin-bottom: 25px;
+}
+ul{
+    background-color: rgba(0, 0, 0, 0.514);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding:5px 40px 10px 40px;
+    text-align: center;
+    width: max-content;
+    font-size: 2em;
+}
+li{
+    list-style-type:none ;
+}
+a:hover{
+    color:white;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding:3px;
+}
+/*Carrito*/
+.carrito{
+    color:#F00;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+/*Confirmar carrito*/
+.conf-carrito{
+    background-color: rgba(0, 0, 0, 0.514);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding:5px 40px 10px 40px;
+    text-align: center;
+    width: max-content;
+    color:white;
+    font-size: 1em;
+}
+/*Log out*/
+.logout{
+    background-color: rgba(155, 155, 155, 0.8);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 6px;
+    color: rgb(172, 0, 0);
+}

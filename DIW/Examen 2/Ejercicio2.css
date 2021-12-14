@@ -1,0 +1,26 @@
+body{
+    width: 990px;
+    margin-left: 300px;
+}
+header h1{
+    width: 100%;
+    text-align: center;
+}
+aside{
+    width: 260px;
+    float:left;
+}
+#principal{
+    width: 700px;
+    float:right;
+    padding-left:30px;
+}
+#contenido{
+    display:flex;
+    justify-content: flex-start;
+}
+#contenido li{
+    width:190px;
+    padding-right: 20px;
+    
+}

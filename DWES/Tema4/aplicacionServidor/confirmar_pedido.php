@@ -7,12 +7,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <tittle>Confirmación de Pedido</tittle>
+        <title>Confirmación de Pedido</title>
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
     <?php 
         require_once 'cabecera.php';
-        echo "<p>¿Está seguro de que desea confirmar este pedido?</p>
+        echo "<p class=conf-carrito>¿Está seguro de que desea confirmar este pedido?</p>
               <a href='procesar_pedido.php'>Si, confirmar</a> <a href='carrito.php'>No, volver al carrito</a>";
         $productos = cargar_productos(array_keys($_SESSION['carrito']));
         echo "<table>";//Abrir la tabla

@@ -1,0 +1,17 @@
+.flex-container{
+    background-color: #1E90FF;
+    display:flex;
+    justify-content: flex-start;
+    width: 950px;
+    height: 100vh;
+}
+div{
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 1.5em;
+    height: 100px;
+    width: 150px;
+    margin: 20px;
+    background-color: #FFF;
+}
+

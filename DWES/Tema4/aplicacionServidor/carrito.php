@@ -8,17 +8,20 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <tittle>Carrito de la compra</tittle>
+        <title>Carrito de la compra</title>
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
         <?php 
         require_once 'cabecera.php';
         $productos = cargar_productos(array_keys($_SESSION['carrito']));        
         if($productos === FALSE){
-            echo "<p>No hay productos en el carrito</p>";
+            echo "<p class=carrito>No hay productos en el carrito</p>";
             exit;
         }
-        echo"<h1>Carrito de la compra</h1>";
+        echo "<div class=header-table>";
+        echo "<h1>Carrito de la compra</h1>";
+        echo "</div>";
         echo "<table>";//Abrir la tabla
         echo "<tr><th>Nombre</th><th>Descripción</th><th>Peso</th><th>Unidades</th><th>Eliminar</th></tr>";
         foreach($productos as $producto){

@@ -8,6 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Tabla de productos por categoría</title>
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
         <?php
@@ -19,8 +20,10 @@
                 exit;
             }
             foreach($categorias as $cat){
+            echo "<div class=header-table>";
             echo "<h1>". $cat['Nombre']. "</h1>";
             echo "<p>".$cat['Descripcion']."</p>";
+            echo "</div>";
             echo "<table>";//Abrir la tabla
             echo "<tr><th>Nombre</th><th>Descripción</th><th>Peso</th><th>Stock</th><th>Comprar</th></tr>";
                 foreach($productos as $producto){

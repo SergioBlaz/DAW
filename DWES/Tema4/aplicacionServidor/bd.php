@@ -120,11 +120,11 @@
                 
                 $upd = "UPDATE productos SET Stock=Stock-$unidades WHERE CodProd=$codProd";
 
-                $resul = $bd->query($upd);
+                $resul1 = $bd->query($upd);
 
                 $resul = $bd->query($ins);
                 
-                if(!$resul){
+                if(!$resul or !$resul1){
                     $bd->rollBack();
                     return false;
                 }

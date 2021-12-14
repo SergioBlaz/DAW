@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <style>
+        form{
+            display:flex;
+            flex-direction: column;
+        }
+        input{
+            width: 50px;
+            margin: 5px 0 5px 0;
+        }
+        input[type="button"]{
+            width: 80px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <label for="n1">Numero1: </label>
+        <input type="number" id="n1">
+        <label for="n2">Numero2: </label>
+        <input type="number" id="n2">
+        <input type="button" id="boton" value="Calcular">
+        <p id="resultado"></p>
+    </form>
+    <script type = "text/javascript">
+    document.getElementById("boton").addEventListener("click", () => {
+        
+        document.getElementById("resultado").innerHTML =  `Resultado : ${parseInt(document.getElementById("n1").value) + parseInt(document.getElementById("n2").value)}`;
+
+    },true);
+    </script>
+</body>
+</html>

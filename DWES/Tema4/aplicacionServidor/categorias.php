@@ -13,7 +13,9 @@
     </head>
     <body>
         <?php require_once 'cabecera.php'; ?>
+        <div class="header-table">
         <h1>Lista de categorías</h1>
+        </div>
         <!--Lista de vínculos con la forma productos.php?categoria=1-->
         <?php 
         $categorias = cargar_categorias();
@@ -29,5 +31,6 @@
             echo "</ul>";
         }
         ?>
+        
     </body>
 </html>

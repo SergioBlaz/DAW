@@ -12,10 +12,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <tittle>Sesión cerrada</tittle>
+        <title>Sesión cerrada</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <p>La sesión se cerró correctamente. ¡Hasta la próxima!</p>
+        <p class="logout">La sesión se cerró correctamente. ¡Hasta la próxima!</p>
         <a href="login.php">Ir a Inicio de Sesión</a>
     </body>
 </html>
