@@ -1,0 +1,23 @@
+*{
+    font-family: sans-serif;
+}
+table{
+    border-collapse: collapse;
+    padding: 6px;
+    text-align: center;
+}
+th{
+    background-color: aqua;
+}
+tbody>tr:first-of-type{
+    background-color: lightgoldenrodyellow;
+}
+tr{
+    background-color: lightgray;
+}
+th{
+    padding:6px;
+}
+td{
+    padding:6px;
+}

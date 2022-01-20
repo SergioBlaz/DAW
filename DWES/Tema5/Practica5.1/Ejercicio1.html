@@ -16,15 +16,13 @@
         
         xhttp.onreadystatechange = () =>{
             if(xhttp.readyState == 4 && xhttp.status == 200){
-                document.body.innerHTML = xhttp.responseText;
+                document.body.innerHTML = `<p>El número aleatorio es: ${xhttp.responseText}</p>`;
             }
         }
 
         xhttp.send();
 
-    },3000);
-        
-
+    },5000);
     </script>
 </body>
 </html>

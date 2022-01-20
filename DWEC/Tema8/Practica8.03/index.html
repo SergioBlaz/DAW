@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css" >
+    <title>Compra</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de la compra</h1>
+        <div class="acciones">
+            <input type="button" id="todo" value="Mostrar Todo" name="todo">
+            <input type="button" id="ordenar" value="Ordenar Por" name="ordenar">
+            <select id="orden" name="ordenar">
+                <option value="peso">Peso</option>
+                <option value="precio">Precio</option>
+                <option value="nombre">Nombre</option>
+            </select>
+            <input type="button" id="filtrar" value="Filtrar" name="filtrar">
+            <select id="filtros" name="ordenar">
+                <option value="peso">Peso</option>
+                <option value="precio">Precio</option>
+                <option value="nombre">Nombre</option>
+            </select>
+            <input type="text" id="textoFiltrar" name="textoFiltrar">
+            <input type="button" id="crear" value="Crear Lista Nueva" name="crear">
+            <input type="button" id="mostrarListas" value="Mostrar Listas" name="mostrarListas">
+        </div>
+    </header>  
+    <ul id="lista"></ul>
+    <div id="crearLista">
+        <h3>Crear lista nueva</h3>
+        <label for="nombreLista">Nombre: </label>
+        <input type="text" id="nombreLista" name="nombreLista">
+        <label for="propietarioLista">Propietario: </label>
+        <input type="text" id="propietarioLista" name="propietarioLista">
+        <input type="button" id="confirmarCrear" name="confirmarCrear" value="Crear">
+    </div>
+    <script type="module" src="js/inicio.js"></script>
+</body>
+</html>

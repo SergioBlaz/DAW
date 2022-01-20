@@ -19,6 +19,21 @@
             echo 'Error con la base de datos: '.$e->getMessage();
         }
     }
-    echo getProductos();
 
+    $listaProductos = getProductos();
+    $productos = [];
+    foreach($listaProductos as $producto){
+
+        $codigo=$producto['CodProd'];
+        $nombre=$producto['Nombre'];
+        $desc=$producto['Descripcion'];
+        $peso=$producto['Peso'];
+        $stock=$producto['Stock'];
+        $codigoCat=$producto['CodCat'];
+        
+        $productos[] = array("Cod"=> $codigo, "Nombre"=> $nombre, "Descripcion"=> $desc, "Peso"=> $peso, "Stock"=> $stock, "CodigoCat"=> $codigoCat);
+          
+    }
+    $json = json_encode($productos);
+    echo $json
 ?>

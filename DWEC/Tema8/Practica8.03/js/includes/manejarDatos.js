@@ -1,0 +1,85 @@
+"use strict"
+
+import { datosCompletos, datosListas } from "./mostrarDatos.js";
+import { getDocs, query, where, orderBy, addDoc } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+
+//Función para mostrar todos los productos disponibles.
+export const mostrarProductos = async (coleccion) => {
+    var coleccionCompleta = await getDocs(coleccion);
+    coleccionCompleta.docs.map((e) => {
+       lista.innerHTML += `<li>${datosCompletos(e)}</li>`;
+    });
+    return lista;
+}
+
+//Función para ordenar los productos de manera ascendente.
+export const ordenarProductos = async (coleccion, campo) => {
+    const consulta = query(coleccion,
+        orderBy(campo,"asc")
+    );
+    var productosOrdenados = await getDocs(consulta);
+    productosOrdenados.docs.map((e) => {
+       lista.innerHTML += `<li>${datosCompletos(e)}</li>`;
+    });
+    return lista;
+}
+
+//Función para filtrar los productos dependiendo del tipo de filtro (El tipo nombre debe ser exactamente igual).
+export const filtrarProductos = async (coleccion, filtro, txtFiltrar) => {
+    if(txtFiltrar != "" ){
+        if(filtro == "precio"){
+            const consulta = query(coleccion,
+                where(filtro, "<=", txtFiltrar)
+            );
+        var coleccionFiltrada = await getDocs(consulta);
+        } else if (filtro == "peso"){
+            const consulta = query(coleccion,
+                where(filtro, "<=", Number(txtFiltrar))
+            );
+        var coleccionFiltrada = await getDocs(consulta);
+        } else if (filtro== "nombre"){
+            const consulta = query(coleccion,
+                where(filtro, "==", txtFiltrar)
+            );
+        var coleccionFiltrada = await getDocs(consulta);
+        }
+        coleccionFiltrada.docs.map((e) => {
+            lista.innerHTML += `<li>${datosCompletos(e)}</li>`;
+        })
+        console.log(lista);
+        return lista;
+    }else{
+        return `<p>Error al aplicar el filtro</p>`  
+    }
+}
+
+//----Practica 8.03-----//
+//Función para crear una nueva lista de la compra.
+export const crearLista = (nLista, nPropietario) => {
+    const tTranscurrido = Date.now();
+    const hoy = new Date(tTranscurrido);
+    const lista = {
+        nombre: nLista,
+        propietario: nPropietario,
+        fecha: hoy.toISOString()
+    }
+    return lista;
+}
+
+//Función para guardar una lista creada en la colección de listas.
+export const guardarLista = async (coleccion, lista) => {
+    const listaGuardada = await addDoc(coleccion, lista);
+    return `<p>La lista se ha guardado correctamente</p>`;
+}
+
+//Función para listar las listas creadas.
+export const mostrarlistas = async (coleccion) => {
+    var coleccionListas = await getDocs(coleccion);
+    coleccionListas.docs.map((e) => {
+       lista.innerHTML += `<li>${datosListas(e)}</li>`;
+    });
+    return lista;
+}
+
+//Función de añadir productos a una lista de la compra
+    

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de login</title>
-    <script type="text/javascript" src="js/cargarDatos.js"></script>
     <script type="text/javascript" src="js/sesion.js"></script>
+    <script type="text/javascript" src="js/cargarDatos.js"></script>
 </head>
 <body>
     <section id="login">
@@ -18,7 +18,7 @@
     </section>
     <section id="principal" style="display:none">
         <header>
-            <?php require 'cabecera_json.php'?>
+            <?php require 'cabecera_json.php'; ?>
         </header>
         <h2 id="titulo"></h2>
         <section id="contenido"></section>

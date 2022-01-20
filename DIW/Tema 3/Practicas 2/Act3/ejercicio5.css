@@ -1,0 +1,7 @@
+dt:not(.mi_clase){
+    background-color: #FFCCCC;
+}
+
+dd:not(#mi_id){
+    background-color: #CCFFCC;
+}

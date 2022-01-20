@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <style>
+        table{
+            text-align: center;
+        }
+        table, tr, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        thead{
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        tbody tr:nth-child(odd){
+            background-color: lightgray;
+        }
+        td{
+            padding: 3px 3px 3px 3px;
+        }
+        tbody tr:hover{
+            background-color: rgba(119, 136, 153, 0.712);
+        }
+    </style>
+</head>
+<body>
+    <h2>Tabla de productos</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>Codigo</td>
+                <td>Nombre</td>
+                <td>Descripción</td>
+                <td>Peso</td>
+                <td>Stock</td>
+                <td>Codigo de Categoria</td>
+            </tr>
+        </thead>
+        <tbody id="prod">
+        </tbody>
+    </table>
+    <script>
+        fetch('Ejercicio3.php')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach((v ) => {
+                document.getElementById("prod").innerHTML += `<tr><td>${v.Cod}</td><td>${v.Nombre}</td><td>${v.Descripcion}</td><td>${v.Peso}</td><td>${v.Stock}</td><td>${v.CodigoCat}</td></tr>`                
+            });
+        });
+    </script>
+</body>
+</html>

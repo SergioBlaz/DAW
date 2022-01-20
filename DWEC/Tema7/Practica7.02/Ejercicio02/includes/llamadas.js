@@ -2,7 +2,7 @@
 
 export function llamarpeliculas(){
     return new Promise((resolve, reject) =>{
-        const url = "https://swapi.dev/api/films";
+        const url = "https://swapi.py4e.com/films";
         var httpRequest = new XMLHttpRequest();
         httpRequest.open("GET",url,true);
         httpRequest.setRequestHeader(
