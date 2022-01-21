@@ -11,10 +11,7 @@ h1{
     width: 100%;
 }
 .ocultar{
-    display:none;
-}
-.mostrar{
-    display: inline;
+    display: none;
 }
 input[type="button"], select{
     background-color: mistyrose;

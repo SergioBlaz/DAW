@@ -25,19 +25,23 @@
                 <option value="nombre">Nombre</option>
             </select>
             <input type="text" id="textoFiltrar" name="textoFiltrar">
-            <input type="button" id="crear" value="Crear Lista Nueva" name="crear">
             <input type="button" id="mostrarListas" value="Mostrar Listas" name="mostrarListas">
         </div>
+        <div id="info"></div>
     </header>  
-    <ul id="lista"></ul>
-    <div id="crearLista">
-        <h3>Crear lista nueva</h3>
-        <label for="nombreLista">Nombre: </label>
-        <input type="text" id="nombreLista" name="nombreLista">
-        <label for="propietarioLista">Propietario: </label>
-        <input type="text" id="propietarioLista" name="propietarioLista">
-        <input type="button" id="confirmarCrear" name="confirmarCrear" value="Crear">
+    <div>
+        <ul id="lista"></ul>
+        <input type="button" class="ocultar" id="crear" value="Crear Lista Nueva" name="crear">
+        <div id="crearLista" class="ocultar">
+            <h3>Crear lista nueva</h3>
+            <label for="nombreLista">Nombre: </label>
+            <input type="text" id="nombreLista" name="nombreLista">
+            <label for="propietarioLista">Propietario: </label>
+            <input type="text" id="propietarioLista" name="propietarioLista">
+            <input type="button" id="confirmarCrear" name="confirmarCrear" value="Crear">
+        </div>
     </div>
+    
     <script type="module" src="js/inicio.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 "use strict"
 
 import { datosCompletos, datosListas } from "./mostrarDatos.js";
-import { getDocs, query, where, orderBy, addDoc } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+import { getDocs, query, where, orderBy, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
 
 //Función para mostrar todos los productos disponibles.
 export const mostrarProductos = async (coleccion) => {
@@ -61,25 +61,28 @@ export const crearLista = (nLista, nPropietario) => {
     const lista = {
         nombre: nLista,
         propietario: nPropietario,
-        fecha: hoy.toISOString()
+        fecha: hoy.toLocaleDateString(),
+        articulos:[]
     }
-    return lista;
+    return lista
 }
 
 //Función para guardar una lista creada en la colección de listas.
 export const guardarLista = async (coleccion, lista) => {
-    const listaGuardada = await addDoc(coleccion, lista);
-    return `<p>La lista se ha guardado correctamente</p>`;
+    const listaGuardada = await addDoc(coleccion, lista)
+    return `<p>La lista se ha guardado correctamente</p>`
 }
 
 //Función para listar las listas creadas.
 export const mostrarlistas = async (coleccion) => {
-    var coleccionListas = await getDocs(coleccion);
-    coleccionListas.docs.map((e) => {
-       lista.innerHTML += `<li>${datosListas(e)}</li>`;
-    });
-    return lista;
+    const coleccionListas = await onSnapshot(coleccion, (e) => {
+        document.querySelector("#lista").innerHTML = ""
+        e.forEach((doc) => {
+           lista.innerHTML += `<li>${datosListas(doc)}</li>`
+       })
+       
+    })
+    return lista
 }
 
-//Función de añadir productos a una lista de la compra
-    
+//Función de añadir productos a una lista de la compra    
