@@ -2,6 +2,7 @@ function cargarCategorias() {
     var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
+                carritoPerma()
                 var cats =  JSON.parse(xhttp.responseText);	
                 var lista = document.createElement("ul");			
                 for(var i = 0; i < cats.length; i++){
@@ -30,7 +31,7 @@ function cargarCategorias() {
 function cargarProductos(destino){
     var xhttp = new XMLHttpRequest();	
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {			
+        if (this.readyState == 4 && this.status == 200) {
             var prod = document.getElementById("contenido");
             var titulo = document.getElementById("titulo");
             titulo.innerHTML ="Productos";
@@ -61,7 +62,8 @@ function crearTablaProductos(productos){
         // creamos el formulario para añadir unidades del producto al carrito (mediante la función anadirProductos())
         formu = crearFormulario("Añadir", productos[i].CodProd, anadirProductos); 
         //creamos la fila en la tabla a mostrar con los productos.
-        //Si no hay stock no se muestran.
+        
+        //<<-------Si no hay stock no se muestran-------->>
         if(productos[i].Stock > 0){
             fila = crear_fila([productos[i].CodProd, productos[i].Nombre, productos[i].Descripcion, productos[i].Stock], "td");
             celda_form = document.createElement("td");
@@ -107,8 +109,9 @@ function anadirProductos(formulario){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             alert("Producto añadido con éxito");
+            carritoPerma()
 //<-----------------------Eliminar para no redirigir al carrito--------------------->
-            cargarCarrito();
+            //cargarCarrito();
         }
     };
     var params = "cod=" + formulario.elements['cod'].value + "&unidades=" + formulario.elements['unidades'].value;
@@ -127,6 +130,7 @@ function cargarCarrito(){
                 contenido.innerHTML = "";
                 var titulo = document.getElementById("titulo");
                 titulo.innerHTML = "Carrito de la compra";
+                document.getElementById("contenedorCarrito").style.display = "none"
                 try{
                     var filas =  JSON.parse(this.responseText);
                     //creamos la tabla de los productos añadidos al carrito
@@ -136,7 +140,15 @@ function cargarCarrito(){
                     var procesar = document.createElement("a");
                     procesar.href ="#";
                     procesar.innerHTML= "Realizar pedido";
-                    procesar.onclick = function(){return procesarPedido();};
+                    procesar.onclick = function(){
+                        //<<-------Confirmación del pedido a realizar------->>
+                        const conf = window.confirm("¿Desea finalizar el pedido?")
+                        if(conf){
+                            return procesarPedido()
+                        } else {
+                            document.getElementById("contenido").innerHTML = "Pedido cancelado"
+                        }
+                    }
                     contenido.appendChild(procesar);
                 }catch(e){
                     var mensaje = document.createElement("p");
@@ -178,6 +190,7 @@ function eliminarProductos(formulario){
     };
     var params = "cod=" + formulario.elements['cod'].value +  "&unidades=" + formulario.elements['unidades'].value;
     xhttp.open("POST", "eliminar_json.php", true);	
+    
     // el envío por POST requiere cabecera y cadena de parámetros
     xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhttp.send(params);	
@@ -188,6 +201,7 @@ function procesarPedido(){
     var xhttp = new XMLHttpRequest();		
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("contenedorCarrito").style.display = "none"
             var contenido = document.getElementById("contenido");
             contenido.innerHTML = "";
             var titulo = document.getElementById("titulo");
@@ -206,25 +220,58 @@ function procesarPedido(){
 
 //Función asincrona para recoger los pedidos de la base de datos
 const cargarPedidos = async () => {
-    //Esperamos a que nos responda la página php, en este caso es necesario utilizar fetch para llamar a la página.
     const respuesta = await fetch('pedidos_json.php');
-    //Guardamos en una variable la respuesta y la transformamos en un objeto JSON
+
     const data = await respuesta.text();
+
     const pedidos = JSON.parse(data);
-    //Construccion de la tabla a mostrar en pantalla con los datos recibidos.
-    const tablaPedidos = document.createElement("table");
+    
+    document.getElementById("contenedorCarrito").style.display = "none"
+    const tablaPedidos = document.createElement("table")
     tablaPedidos.innerHTML = `<thead><th>Numero Pedido</th><th>Fecha</th><th>Enviado</th><th></th></thead>`;
-    pedidos.map((e) => {
-        if(e.Enviado == 0){
-            enviado = "No";
-        } else {
-            enviado = "Si";
-        }
-        tablaPedidos.innerHTML += `<tr><td>${e.CodPed}</td><td>${e.Fecha}</td><td>${enviado}</td><td></td></tr>
-                                   <tr><td></td><th>Producto</th><th>Descripción</th><th>Cantidad</th></tr>
-                                   <tr><td></td><td>${e.Nombre}</td><td>${e.Descripcion}</td><td>${e.Unidades}</td></tr>`;
+    
+    pedidos.map((e)=>{
+    e.Enviado == 0 ? enviado = "No" : enviado = "Si"
+
+    
+    tablaPedidos.innerHTML += `<tr><td>${e.CodPed}</td><td>${e.Fecha}</td><td>${enviado}</td><td></td></tr>
+                                <tr><td></td><th>Producto</th><th>Descripción</th><th>Cantidad</th></tr>
+                                <tr><td></td><td>${e.Nombre}</td><td>${e.Descripcion}</td><td>${e.Unidades}</td></tr>`
     })
-    document.getElementById("titulo").innerHTML = "Pedidos";
-    document.getElementById("contenido").innerHTML = "";
-    document.getElementById("contenido").appendChild(tablaPedidos);
+    document.getElementById("titulo").innerHTML = "Pedidos"
+    document.getElementById("contenido").innerHTML = ""
+    document.getElementById("contenido").appendChild(tablaPedidos)
+    return false
+}
+
+//Función para mostrar una lista permanente del carrito de la compra
+const carritoPerma = async () => {
+    try{
+    const respuesta = await fetch('carrito_json.php')
+    const data = await respuesta.text()
+    const productos = JSON.parse(data)
+    const tablaPedidos = document.createElement("table");
+    tablaPedidos.innerHTML =`<thead><th>Producto</th><th>Unidades</th></thead>`
+    productos.map((e)=>{
+        tablaPedidos.innerHTML += `<tr><td>${e.Nombre}</td><td>${e.unidades}</td></tr>`
+    })
+    document.getElementById("carrito").innerHTML = ""
+    document.getElementById("carrito").appendChild(tablaPedidos)
+    var procesar = document.createElement("a");
+    procesar.href ="#";
+    procesar.innerHTML= "Realizar pedido";
+    procesar.onclick = function(){
+        const conf = window.confirm("¿Desea finalizar el pedido?")
+        if(conf){
+            return procesarPedido()
+        } else {
+            document.getElementById("contenido").innerHTML = "Pedido cancelado"
+        }
+    }
+    document.getElementById("carrito").appendChild(procesar);
+    document.getElementById("contenedorCarrito").style.display = "block"
+    }catch(e){
+        document.getElementById("contenedorCarrito").style.display = "block"
+        document.getElementById("carrito").innerHTML = `<p>Todavía no tiene productos en el carrito</p>`
+    }
 }

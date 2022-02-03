@@ -9,7 +9,8 @@ function cargar_pedidos($codRes){
         $bd = new PDO(CADENA_CONEXION, USUARIO_CONEXION, CLAVE_CONEXION);
         $ins = "SELECT p.CodPed,p.Fecha,p.Enviado,pP.Unidades,pr.Nombre,pr.Descripcion
                 FROM pedidos p, pedidosproductos pP, productos pr
-                WHERE p.Restaurante=$codRes AND p.CodPed=pP.CodPed AND pP.CodProd=pr.CodProd";
+                WHERE p.Restaurante=$codRes AND p.CodPed=pP.CodPed AND pP.CodProd=pr.CodProd
+                ORDER BY p.CodPed DESC";
         $resul = $bd->query($ins);
         if(!$resul){
             return FALSE;

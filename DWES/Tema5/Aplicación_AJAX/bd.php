@@ -48,8 +48,7 @@ function cargar_categorias(){
         if($resul->rowCount() === 0){
             return FALSE;
         }
-        //echo "<h2>". $resul ."</h2>";
-        //echo "";
+
         return $resul;
     } catch (Exception $ex) {
         echo "Error con la base de datos: " . $ex->getMessage();
@@ -118,9 +117,14 @@ function insertar_pedido($carrito, $codRes){
         }
         $pedido = $bd->lastInsertId();
         foreach($carrito as $codProd=>$unidades){
+            
             $ins = "INSERT into pedidosproductos(CodPed, CodProd, Unidades) VALUES ($pedido, $codProd, $unidades)";
+            $upd = "UPDATE productos SET Stock=Stock-$unidades WHERE CodProd=$codProd";
+            
             $resul = $bd->query($ins);
-            if(!$resul){
+            $resul2 = $bd->query($upd);
+            
+            if(!$resul or !$resul2){
                 $bd->rollBack();
                 return FALSE;
             }

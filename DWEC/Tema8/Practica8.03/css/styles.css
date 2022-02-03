@@ -14,13 +14,10 @@ h1{
     display: none;
 }
 input[type="button"], select{
-    background-color: mistyrose;
+
     border: none;
     border-radius: 10px;
     padding: 10px;
-}
-input[type="button"]:hover, select:hover{
-    background-color: mintcream;
 }
 ul {
     list-style-type: none;
@@ -29,23 +26,10 @@ ul {
 }
 ul li {
     margin-top: -1px; 
-    background-color: #f6f6f6; 
     padding: 6px;
 }
-li:nth-last-child(even){
-    background-color: lightblue;
-}
-li:nth-last-child(odd){
-    background-color: lightcyan;
-}
-li:hover{
-    background-color: lightskyblue;
-}
-body{
-    background-color: lightslategrey;
-}
+
 header{
-    background-color: mistyrose;
     padding-bottom: 15px;
     margin: 7px;
 }

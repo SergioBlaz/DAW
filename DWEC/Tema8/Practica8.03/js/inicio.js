@@ -1,7 +1,7 @@
 import {app} from "./includes/conexionFirebase.js"
 import {getFirestore,collection} from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
 import {crearLista, filtrarProductos, guardarLista, mostrarlistas, mostrarProductos, ordenarProductos} from "./includes/manejarDatos.js"
-import {botonCrear, formularioCrear} from "./includes/mostrarDatos.js"
+import {botonAnadir, botonCrear, formularioCrear, mostrarArticulosListas} from "./includes/mostrarDatos.js"
 
 window.onload = () => {
     const d = document
@@ -10,6 +10,7 @@ window.onload = () => {
 
     //Mostrar todos los productos(Se imprime por pantalla [object Promise] pero no se donde sale).
     d.querySelector("#todo").addEventListener("click", ()=>{
+        botonAnadir(false)
         botonCrear(false)
         formularioCrear(false)
         d.querySelector("#lista").innerHTML = ""
@@ -18,6 +19,7 @@ window.onload = () => {
 
     // Mostrar todos los productos ordenados según la selección
     d.querySelector("#ordenar").addEventListener("click", ()=>{
+        botonAnadir(false)
         botonCrear(false)
         formularioCrear(false)
         d.querySelector("#lista").innerHTML = ""
@@ -26,6 +28,7 @@ window.onload = () => {
 
     // Mostrar todos los productos filtrados según la selección y el texto.
     d.querySelector("#filtrar").addEventListener("click", ()=>{
+        botonAnadir(false)
         botonCrear(false)
         formularioCrear(false)
         d.querySelector("#lista").innerHTML = ""
@@ -37,6 +40,7 @@ window.onload = () => {
         document.querySelector("#lista").innerHTML = ""
         d.querySelector("#lista").innerHTML = mostrarlistas(listas)
         botonCrear(true)
+        botonAnadir(true)
         formularioCrear(false)
     },false) 
 
@@ -55,5 +59,23 @@ window.onload = () => {
 
     },false)
 
+    //Añadir productos a las listas creadas, primero se debe seleccionar una lista, después te redirige al apartado de productos para añadirlos a la lista
+    //(Añadir boton de confirmar)
+    d.querySelector("#anadirProducto").addEventListener("click", ()=>{
+        d.querySelector("#lista").addEventListener("click",()=>{
+            //Deshabilitar tras el click?
+            botonCrear(false)
+            botonAnadir(false)
+            d.querySelector("#lista").innerHTML = ""
+            d.querySelector("#lista").innerHTML = mostrarProductos(coleccion)
+            console.log(e.target.id)// contiene el id de la lista
+        },false)
+        d.querySelector("#lista").removeEventListener("click",()=>{},false)
+    },false)
+    
+    d.querySelector("#lista").addEventListener("click",(e)=>{
+        console.log(e.target)
+        mostrarArticulosListas(e.target.childNodes)
+    })
 
 }

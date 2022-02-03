@@ -10,17 +10,24 @@
     <body>		
         <section id = "login">
             <form onsubmit="return login()" method = "POST">
-                Usuario: <input id = "usuario" type = "text">			
-                Clave: <input id = "clave" type = "password">					
-                <input type = "submit">
+                <label for="usuario">Usuario:</label>
+                <input id = "usuario" type = "text">			
+                <label for="clave">Clave:</label>
+                <input id = "clave" type = "password">					
+                <input type = "submit" value="Entrar">
             </form>
         </section>
         <section id = "principal" style="display:none">
             <header>
                 <?php require 'cabecera_json.php'; ?>
             </header>
-            <h2 id = "titulo"></h2>
-            <section id = "contenido"></section>			
+            <div id="contenedorContenido">
+                <h2 id = "titulo"></h2>
+                <section id = "contenido"></section>
+            </div>
+            <div id="contenedorCarrito">			
+                <section id = "carrito"></section>
+            </div>
         </section>
     </body>
 </html>

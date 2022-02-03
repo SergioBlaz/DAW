@@ -1,7 +1,7 @@
 "use strict"
 
 import { datosCompletos, datosListas } from "./mostrarDatos.js";
-import { getDocs, query, where, orderBy, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+import { getDocs, query, where, orderBy, addDoc, onSnapshot, updateDoc,arrayUnion } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
 
 //Función para mostrar todos los productos disponibles.
 export const mostrarProductos = async (coleccion) => {
@@ -48,8 +48,6 @@ export const filtrarProductos = async (coleccion, filtro, txtFiltrar) => {
         })
         console.log(lista);
         return lista;
-    }else{
-        return `<p>Error al aplicar el filtro</p>`  
     }
 }
 
@@ -70,7 +68,6 @@ export const crearLista = (nLista, nPropietario) => {
 //Función para guardar una lista creada en la colección de listas.
 export const guardarLista = async (coleccion, lista) => {
     const listaGuardada = await addDoc(coleccion, lista)
-    return `<p>La lista se ha guardado correctamente</p>`
 }
 
 //Función para listar las listas creadas.
@@ -78,11 +75,23 @@ export const mostrarlistas = async (coleccion) => {
     const coleccionListas = await onSnapshot(coleccion, (e) => {
         document.querySelector("#lista").innerHTML = ""
         e.forEach((doc) => {
-           lista.innerHTML += `<li>${datosListas(doc)}</li>`
+           lista.innerHTML += `<li id=${doc.id}>${datosListas(doc)}</li>`
        })
        
     })
     return lista
 }
 
-//Función de añadir productos a una lista de la compra    
+
+
+//Función de añadir productos a una lista de la compra
+export const anadirProductoLista = async (coleccion, id, nombre, precio, peso) => {
+    const listaRef = await doc(coleccion, id)
+    await updateDoc(listaRef,{
+        articulos: arrayUnion(
+            map['nombre']=nombre,
+            map['peso']=peso,
+            map['precio']=precio
+        )
+    })
+}
