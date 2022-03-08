@@ -1,0 +1,28 @@
+#wrapper{
+    margin-left:50px;
+}
+#gridGaps{
+    color: #777;
+}
+#cuadricula{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.2fr 1.2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    margin-top:25px;
+    border: 1px solid #777;
+    height: 350px;
+    width: 600px;
+}
+.item{
+    font-family: Verdana, Geneva, sans-serif;
+    padding: 1em;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    background-color: var(--color);
+}
+body{
+    line-height: 2em;
+    background-color: #222;
+}

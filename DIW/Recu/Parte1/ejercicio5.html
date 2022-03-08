@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejercicio 5</title>
+<script>
+window.onload = () =>{
+document.getElementById("boton").addEventListener("click", ()=>{
+    document.getElementById("lista").innerHTML += `<li>Nuevo elemento</li>`
+})
+
+}
+       
+</script>
+</head>
+
+<body>
+
+<ul id="lista">
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetuer adipiscing elit</li>
+<li>Sed mattis enim vitae orci</li>
+<li>Phasellus libero</li>
+<li>Maecenas nisl arcu</li>
+</ul>
+<input type=button id=boton value="Añadir fila">
+
+</body>
+</html>

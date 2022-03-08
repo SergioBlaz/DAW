@@ -75,7 +75,7 @@ export const mostrarlistas = async (coleccion) => {
     const coleccionListas = await onSnapshot(coleccion, (e) => {
         document.querySelector("#lista").innerHTML = ""
         e.forEach((doc) => {
-           lista.innerHTML += `<li id=${doc.id}>${datosListas(doc)}</li>`
+           lista.innerHTML += `<li>${datosListas(doc)} <input type=button id=${doc.id} class=anadirLista value=Añadir Productos></li>`
        })
        
     })

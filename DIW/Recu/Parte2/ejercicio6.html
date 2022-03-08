@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+<style>
+
+#cuadricula {
+  height: 300px;
+  margin: 1em 0;
+  border: 1px dashed #777;
+  background: 0 0/100px 100px linear-gradient(transparent 0%, transparent 99%, #777 100%), 
+              0 0/100px 100px linear-gradient(90deg, transparent 0%, transparent 99%, #777 100%);
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.item {
+  padding: 1em;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: #3E989B;
+  background-color: var(--color);
+}
+
+.item p {
+  color:white;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #222;
+  color: #777;
+}
+
+#wrapper {
+  width: 500px;
+  margin: 1em auto;
+}
+
+#radios strong {
+  display: inline-block;
+  width: 130px;
+  font-weight:normal;
+}
+
+</style>
+<script>
+  window.onload = () =>{
+    const d = document
+    d.getElementsByName("justifySelf").forEach((e)=>{
+      e.addEventListener("click",(ev)=>{
+        
+      })
+    })
+  }
+</script>
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+  <div id="radios">
+    <strong>justify-self:</strong> 
+    <input type="radio" name="justifySelf" value="start" ><label> start </label> 
+    <input type="radio" name="justifySelf" value="end"><label> end </label> 
+    <input type="radio" name="justifySelf" value="center" checked><label> center </label>
+    <input type="radio" name="justifySelf" value="stretch"><label> stretch </label><br>
+
+    <strong>align-self:</strong> 
+    <input type="radio" name="alignSelf" value="start" ><label> start </label> 
+    <input type="radio" name="alignSelf" value="end"><label> end </label> 
+    <input type="radio" name="alignSelf" value="center" checked><label> center </label>
+    <input type="radio" name="alignSelf" value="stretch"><label> stretch </label>
+  </div>
+
+<div id="cuadricula">
+<div class="item" style="--color:#3E989B;"><p>1</p></div>
+<div class="item" style="--color:#6DB465;"><p>2</p></div>
+<div class="item" style="--color:#F2C14E;"><p>3</p></div>
+<div class="item" style="--color:#F78154;"><p>4</p></div>
+<div class="item" style="--color:#C87694;"><p>5</p></div>
+<div class="item" style="--color:#3E989B;"><p>6</p></div>   
+<div class="item" style="--color:#6DB465;"><p>7</p></div>
+<div class="item" style="--color:#F2C14E;"><p>8</p></div>
+<div class="item" style="--color:#F78154;"><p>9</p></div>
+<div class="item" style="--color:#C87694;"><p>10</p></div>
+<div class="item" style="--color:#3E989B;"><p>11</p></div>   
+<div class="item" style="--color:#6DB465;"><p>12</p></div>
+<div class="item" style="--color:#F2C14E;"><p>13</p></div>
+<div class="item" style="--color:#F78154;"><p>14</p></div>
+<div class="item" style="--color:#C87694;"><p>15</p></div>
+</div>
+</div>
+
+</body>
+
+</html>

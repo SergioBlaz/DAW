@@ -27,6 +27,7 @@ export const mostrarArticulosListas = (art) =>{
 //Funciónes para ocultar o mostrar las opciones de creacion de listas
 export const formularioCrear = (selec) =>{
     selec ? document.querySelector("#crearLista").className = "mostrar" : document.querySelector("#crearLista").className = "ocultar"
+    //doucument.querySelector("#crearLista").className.toggle("ocultar")
 }
 export const botonCrear = (selec) =>{
     selec ? document.querySelector("#crear").className = "mostrar" : document.querySelector("#crear").className = "ocultar"
