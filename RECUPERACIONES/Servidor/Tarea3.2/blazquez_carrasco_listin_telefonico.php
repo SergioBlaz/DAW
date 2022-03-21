@@ -48,7 +48,6 @@
     if(!empty($_POST['personas'])){
         $array = explode(",", $_POST['personas']);
         $pos = count($array);
-
     } else {
         $array = array();
         $pos = 0;

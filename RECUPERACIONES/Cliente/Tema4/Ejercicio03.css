@@ -1,0 +1,15 @@
+p:nth-child(1){
+    color:blueviolet
+}
+p:nth-child(2){
+    color:blue
+}
+p:nth-child(3){
+    color:burlywood
+}
+p:nth-child(4){
+    color:crimson
+}
+p:nth-child(5){
+    color: aqua
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="contenedor">
+        <header class="titulo">
+            <h1>Gestor de Tareas</h1>
+        </header>
+        <div class="contenedor-tareas">
+            <nav class="nav-tareas">
+                <p id="new">Nueva</p>
+                <p id="show">Mostrar</p>
+            </nav>
+            <div id="form-tareas" class="form-tareas" style="display: none;">
+                <label for="form-titulo">Título:</label>
+                <input type="text" id="form-titulo" name="form-titulo" class="txt-form"> 
+                <label for="form-contenido">Contenido:</label>
+                <input type="text" id="form-contenido" name="form-contenido" class="txt-form">
+                <input type="button" id="add" name="add" value="Añadir" class="btn-tarea">
+            </div>
+            <div class="pendientes">
+                <header>
+                    <h2>Pendientes</h2>
+                </header>
+                <div id="tareas-pendientes" class="tareas-pendientes">
+                </div>
+            </div>
+            <div class="acabadas">
+                <header>
+                    <h2>Acabadas</h2>
+                </header>
+                <div id="tareas-acabadas" class="tareas-acabadas">
+                </div>
+            </div>
+        </div>
+        <footer class="pie">
+            <p id="contador">Tareas:0/0</p>
+        </footer>
+    </div>
+    <script type="module" src="../js/inicio.js"></script>
+</body>
+</html>
