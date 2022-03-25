@@ -15,7 +15,6 @@ window.onload = () =>{
     //Evento para el cambio de estado de la llamada a la api
     httpRequest.addEventListener("readystatechange", () => {
         if(httpRequest.readyState == 4 && httpRequest.status == 200){
-            
             document.getElementById("info").innerHTML = "";
 
             //Unicamente cuando la api nos responda se añadirán las películas al DOM
@@ -27,7 +26,6 @@ window.onload = () =>{
                     
                     //Si se hace click en una película se mostrará la sinopsis de esta
                     document.getElementById("sinopsis").innerHTML = mostrarSinopsis(JSON.parse(httpRequest.response),e.target.id);
-
                     document.getElementById("personaje").innerHTML = "";
 
                     //Con el objeto JSON, recorrerlo y llamar con un método a los 10 primeros personajes que aparecen.
