@@ -10,6 +10,11 @@
     <header>
         <h1>Etiquetas</h1>
     </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Index</a></li>
+        </ul>
+    </nav>
     <section>
         <header>
             <h2>Nuevas etiquetas</h2>
@@ -26,10 +31,108 @@
             <header>
                 <h4>Bdi</h4>
             </header>
-            
-            <p>Elemento utilizado para indicar la dirección de algo, ya sea un enlace a otra web <br>
-            o una dirección real.</p>
+            <ul>
+                <li><b><bdi>Aaron</bdi> (2):</b> Hola!</li>
+                <li><b><bdi>נקניק</bdi> (5):</b> Hola! Cómo estás?</li>
+            </ul>
+            <p>Elemento utilizado para aislar un trozo de texto del contenido con propósitos de <br>
+            formateo bidireccional de texto.
+            </p>
         </article>
+        <article>
+            <header>
+                <h4>Cite</h4>
+            </header>
+            <p> <cite>Galileo</cite> dijo: "... y sin embargo, se mueve." </p>
+            <p>Elemento utilizado para marcar una referencia a una fuente, o el autor de un texto citado.</p>
+        </article>
+        <article>
+            <header>
+                <h4>Datalist</h4>
+            </header>
+            <label>Choose a browser from this list:
+                <input list="browsers" name="myBrowser"/></label>
+                <datalist id="browsers">
+                  <option value="Chrome">
+                  <option value="Firefox">
+                  <option value="Internet Explorer">
+                </datalist>
+            <p>El elemento datalist contiene un conjunto de elementos "option" que representan <br>
+            los valores disponibles para otros controles.</p>
+        </article>
+        <article>
+            <header>
+                <h4>Embed</h4>
+            </header>
+            <embed type="text/html" src="snippet.html" width="500" height="200"> 
+            <p>El elemento Embed representa un punto de integración para una aplicación externa <br>
+            o de contenido interactivo.</p>
+        </article>
+        <article>
+            <header>
+                <h4>Mark</h4>
+            </header>
+            <p>Most <mark>salamander</mark>s are nocturnal, and hunt for insects, worms,<br>
+            and other small creatures.</p>
+            <p>Este elemento representa un texto marcado o resaltado como referencia o <br>
+            anotación, debido a su relevancia o importancia en un contexto particular.</p>
+        </article>
+        <article>
+            <header>
+                <h4>Meter</h4>
+            </header>
+            <label for="disk_d">Disk usage D:</label>
+            <meter id="disk_d" value="0.6">60%</meter>
+            <p>Este elemento define una escala sin un rango determinado.</p>
+        </article>
+        <article>
+            <header>
+                <h4>Output</h4>
+            </header>
+            <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+                <input type="range" id="b" name="b" value="50" /> +
+                <input type="number" id="a" name="a" value="10" /> =
+                <output name="result" for="a b">60</output>
+              </form>              
+            <p>El elemento output es un elemento contenedor en el cual una página o app <br>
+            puede mostrar los resultados de la acción de un usuario</p>
+        </article>
+        <article>
+            <header>
+                <h4>Progress</h4>
+            </header>
+            <label for="file">File progress:</label>
+            <progress id="file" max="100" value="70"> 70% </progress>
+            <p>El elemento progress es utilizado para visualizar el progreso de una tarea.
+        </article>
+        <article>
+            <header>
+                <h4>Ruby</h4>
+            </header>
+            <p><ruby>東<rp>(</rp><rt>とう</rt><rp>)</rp>京<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby></p>
+            <p>El elemento ruby provee los medios para aplicar anotaciones ruby a una linea de texto.</p>
+            </article>
+        <article>
+            <header>
+                <h4>Small</h4>
+            </header>
+            <p><small>The content is licensed under a Creative Commons Attribution-ShareAlike 2.5 Generic License.</small></p>
+            <p>El elemento hace el tamaño del texto una talla más pequeña que el tamaño mínimo de fuente del navegador.</p>
+        </article>
+        <article>
+            <header>
+                <h4>Time</h4>
+            </header>
+            <p>The concert starts at <time datetime="20:00">20:00</time> and you'll be able to enjoy the band for at least <time datetime="PT2H30M">2h 30m</time>.</p>
+            <p>El elemento time representa un periodo específico en el tiempo.</p>
+        </article>
+        <article>
+            <header>
+                <h4>Wbr</h4>
+            </header>
+            <p>http://this<wbr>.is<wbr>.a<wbr>.really<wbr>.long<wbr>.example<wbr>.com/With<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages</p>
+            <p>El elemento wbr representa una posición dentro del texto donde <br>
+                el explorador puede opcionalmente saltar una línea.</p>
         </article>
     </section>
 </body>

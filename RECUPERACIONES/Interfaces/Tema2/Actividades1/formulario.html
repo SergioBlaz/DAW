@@ -7,6 +7,50 @@
     <title>Formulario</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Formulario</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Index</a></li>
+        </ul>
+    </nav>
+    <section>
+        <form method="">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <label for="name">Nombre: </label>
+                <input type="text" name="name" pattern="[A-Za-z]" placeholder="Nombre" required autofocus><br>
+                <label for="name2">Apellido 1: </label>
+                <input type="text" name="name2" pattern="[A-Za-z]" placeholder="Apellido1" required><br>
+                <label for="name3">Apellido 2: </label>
+                <input type="text" name="name3" pattern="[A-Za-z]" placeholder="Apellido2" required><br>
+            </fieldset>
+            <fieldset>
+                <legend>Datos de Contacto</legend>
+                <label for="number">Teléfono: </label>
+                <input type="tel" name="number" pattern="[0-9]{3} [0-9]{3}-[0-9]{4}" placeholder="555 333-4444" required><br>
+                <label for="email">Email: </label>
+                <input type="email" name="email" pattern="[A-Za-z]@[A-Za-z].[com-es]" placeholder=" example@example.es" required><br>
+                <label for="web">URL: </label>
+                <input type="url" name="web" placeholder="https://example.com"><br>
+            </fieldset>
+            <fieldset>
+                <legend>Otros</legend>
+                <label for="fecha">Fecha: </label>
+                <input type="date" name="fecha"><br>
+                <label for="hora">Hora: </label>
+                <input type="time" name="hora"><br>
+                <label for="int">Intervalo: </label>
+                <p>0<input type="range" name="int" min=5000 max=1000000 step="100">10</p>
+                <output class="price-output" for="price"></output>
+                <script></script>
+                <label for="color">Color: </label>
+                <input type="color" name="color">
+            </fieldset>
+            <input type="submit" value="Enviar">
+
+        </form>
+    </section>
 </body>
 </html>

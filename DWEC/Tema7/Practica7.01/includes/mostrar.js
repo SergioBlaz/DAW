@@ -33,7 +33,7 @@ function llamarPersonajes(pUrl){
             //Unicamente cuando la api nos responde se añade el personaje al DOM
             document.getElementById("personaje").innerHTML += `<li>${(JSON.parse(httpRequest.response).name)}</li>`;
         }
-    }, 
+    },
     true);
     
     httpRequest.send();
