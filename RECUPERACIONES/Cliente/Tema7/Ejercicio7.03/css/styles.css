@@ -13,7 +13,7 @@ h1, h2, div{
     grid-template-areas: "t t t"
                          "p p p"
                          "d d d"
-                         "c c c"
+                         "c v n"
                          "f f f";
 }
 /*Titulos*/
@@ -74,11 +74,34 @@ h1, h2, div{
     grid-area: c;
     background-color: lightslategray;
 }
-.titulo-personajes{
-    margin-left: 20px;
+.titulo-personajes, .titulo-vehiculos, .titulo-naves{
+    text-align: center;
+    color:white
 }
 #personajes{
     list-style-type: none;
+}
+#personajes>li{
+    width: max-content;
+    padding: 5px;
+}
+#personajes>li:hover{
+    cursor:pointer;
+    box-shadow: inset 0 0 0 1px black;
+}
+/*Vehiculos*/
+.contenedor-vehiculos{
+    grid-area: v;
+    background-color: lightslategray;
+}
+.titulo-vehiculos, .titulo-naves{
+    text-align: center;
+    color:white
+}
+/*Naves*/
+.contenedor-naves{
+    grid-area: n;
+    background-color: lightslategray;
 }
 /*Footer*/
 footer{

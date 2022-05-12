@@ -1,24 +1,19 @@
 "use strict"
 
-import { mostrarPeliculas, mostrarSinopsis } from "./includes/mostrar.js"
-import { consultaPersonaje } from "./includes/consultas.js"
+import { mostrarPeliculas, mostrarSinopsis } from "./js/includes/mostrar.js"
+import { consultaPersonaje } from "./js/includes/consultas.js"
+
 window.onload = () => {
     let d = document
     const url = "https://swapi.py4e.com/api/films"
     var request = new XMLHttpRequest()
     request.open("GET",url)
-    request.setRequestHeader(
-        "Content-Type",
-        "application/x-www-form-urlencoded"
-    )
-    d.querySelector("#info").innerHTML = "<p>Cargando películas...</p>"
 
     //Evento para el cambio de estado en la petición.
     request.addEventListener("readystatechange",() => {
         if(request.readyState == 4 && request.status == 200){
 
-            //Limpiamos la información para el usuario y añadimos todas las películas una vez nos haya
-            //respondido la consulta.
+            //Limpiamos la información para el usuario y añadimos todas las películas una vez nos haya respondido la consulta.
             d.querySelector("#info").innerHTML = ""
             d.querySelector("#peliculas").appendChild(mostrarPeliculas(JSON.parse(request.response)))
 
@@ -28,6 +23,7 @@ window.onload = () => {
                     d.querySelector("#sinopsis").innerHTML = mostrarSinopsis(JSON.parse(request.response),e.id)
                     d.querySelector("#personajes").innerHTML = ""
 
+                    //Recorrer la respuesta y mostrar 10 personajes.
                     JSON.parse(request.response).results.map(el => {
                         if(el.episode_id == e.id){
                             for(let i = 0; i<10; i++){
@@ -36,8 +32,7 @@ window.onload = () => {
                         }
                     })
                 })
-            })
-            
+            }) 
         }
     })
     request.send()
