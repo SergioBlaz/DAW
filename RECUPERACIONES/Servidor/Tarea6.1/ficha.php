@@ -28,6 +28,8 @@ function mostrarJugadores($jugadores){
         for($j=0; $j<count($slice); $j++){
             echo "<td>".$slice[$j]."</td>";
         }
+        //Enlaces para borrar o actualizar la ficha del jugador.
+        echo "<td><a href=borrar_ficha.php?name=".$slice[0].">Borrar</a></td><td><a href=actualizar_ficha.php?name=$slice[0]&pos=$slice[1]&games=$slice[2]&points=$slice[3]&asist=$slice[4]&rebounds=$slice[5]>Actualizar</a></td>";
         echo"</tr>";
     echo "</table>";
 }

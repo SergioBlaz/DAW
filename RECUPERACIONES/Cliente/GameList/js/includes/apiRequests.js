@@ -7,9 +7,10 @@ export const allGames = async () => {
         `https://api.rawg.io/api/games?key=${apiKey}`,
         )
     const apiJson = await apiResponse.json()
-    const jsonGames = []
-    apiJson.results.map((game,i) =>{
-        jsonGames[i] = game.id + game.name
+    const jsonGames = {}
+    apiJson.results.map((game) =>{
+        jsonGames.name = game.name
+        jsonGames.id = game.id
     })
     return jsonGames
 }

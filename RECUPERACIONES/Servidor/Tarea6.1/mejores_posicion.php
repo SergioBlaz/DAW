@@ -10,6 +10,7 @@ if($base){
         while(mysqli_stmt_fetch($resultado)){
             array_push($jugadores, $nombre."-".$posicion."-".$partidos."-".$puntos."-".$rebotes."-".$asist);
         }
+        require 'cabezera.php';
         echo "<h3>Escoltas y Aleros con más de 15 puntos</h3>";
         mostrarJugadores(masPuntos($jugadores));
         echo "<h3>Ala Pivots y Pivots con más de 7 rebotes</h3>";

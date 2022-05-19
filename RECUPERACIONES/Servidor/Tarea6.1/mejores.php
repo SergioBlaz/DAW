@@ -10,6 +10,7 @@ if($base){
         while(mysqli_stmt_fetch($resultado)){
             array_push($jugadores, $nombre."-".$posicion."-".$partidos."-".$puntos."-".$rebotes."-".$asist);
         }
+        require 'cabezera.php';
         echo "<h3>Jugadores con más Puntos</h3>";
         mostrarJugadores(masPuntos($jugadores));
         echo "<h3>Jugadores con más Rebotes</h3>";

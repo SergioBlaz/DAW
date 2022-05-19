@@ -11,6 +11,7 @@ if($base){
         while(mysqli_stmt_fetch($resultado)){
             array_push($jugadores, $nombre."-".$posicion);
         }
+        require 'cabezera.php';
         echo "<h3>Listado de Jugadores</h3>";
         mostrarJugadores(($jugadores));
 

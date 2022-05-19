@@ -7,6 +7,7 @@
     <title>Nuevo Jugador</title>
 </head>
 <body>
+    <?php require 'cabezera.php'; ?>
     <h2>Formulario Nuevo Jugador</h2>
     <div>
         <form action="guardar_ficha.php" method="POST">

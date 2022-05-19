@@ -7,6 +7,7 @@
     <title>Estadísticas</title>
 </head>
 <body>
+<?php require 'cabezera.php'; ?>
     <h2>Estadísticas</h2>
     <label for="stats">Ver Estadísticas: </label>
     <select name="stats">
