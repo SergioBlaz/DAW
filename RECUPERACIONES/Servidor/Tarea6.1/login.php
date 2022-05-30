@@ -17,6 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log-In Baloncesto</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="contenedor">
@@ -32,8 +33,8 @@
             <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                     <label for="user">Usuario: </label>
                     <input type="text" id="user" name="user" value="<?php if(isset($user)){ echo $user;} ?>"><br><br>
-                    <label for="passwd">Clave </label>
-                    <input type="password" id="passwd" name="passwd"><br><br>
+                    <label for="passwd">Clave: </label>
+                    <input type="password" id="passwd" name="passwd">
                     <input type="submit" value="Iniciar Sesión">
             </form>
         </div>

@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadísticas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <?php require 'cabezera.php'; ?>
     <h2>Estadísticas</h2>
-    <label for="stats">Ver Estadísticas: </label>
+    <label for="stats"> Ver Estadísticas: </label>
     <select name="stats">
         <option value="asist" onclick="getPlayerAssists();">Asistencias</option>
         <option value="games" onclick="getPlayerGames();">Partidos</option>

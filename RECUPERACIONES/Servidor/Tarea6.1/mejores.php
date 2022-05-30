@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejores Jugadores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+</body>
+</html>
 <?php
 $base = mysqli_connect("localhost","root","","baloncesto");
 if($base){
@@ -57,7 +69,7 @@ function masAsistencias($jugadores){
 }
 function mostrarJugadores($jugadores){
     echo "<table>";
-    echo "<tr><td>Nombre</td><td>Posicion</td><td>Partidos</td><td>Puntos</td><td>Rebotes</td><td>Asistencias</td></tr>";
+    echo "<tr><th>Nombre</th><th>Posicion</th><th>Partidos</th><th>Puntos</th><th>Rebotes</th><th>Asistencias</th></tr>";
     for($i=0; $i<count($jugadores); $i++){
         $slice = explode("-",$jugadores[$i]);
         echo "<tr>";

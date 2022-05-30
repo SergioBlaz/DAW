@@ -16,13 +16,13 @@
         <label for="pos">Posición: </label>
         <input type="text" name="pos" value="<?php echo $posAct ?>" required><br>
         <label for="games">Partidos: </label>
-        <input type="number" name="games" min="0" value="<?php echo $_GET['games']?>" required><br>
+        <input type="number" name="games" min="0" value="<?php if(isset($_GET['games'])){ echo $_GET['games']; }?>" required><br>
         <label for="points">Puntos: </label>
-        <input type="number" name="points" min="0" value="<?php echo $_GET['points']?>" required><br>
+        <input type="number" name="points" min="0" value="<?php if(isset($_GET['points'])){ echo $_GET['points']; }?>" required><br>
         <label for="asist">Asistencias: </label>
-        <input type="number" name="asist" min="0" value="<?php echo $_GET['asist']?>" required><br>
+        <input type="number" name="asist" min="0" value="<?php if(isset($_GET['asist'])){echo $_GET['asist']; }?>" required><br>
         <label for="rebounds">Rebotes: </label>
-        <input type="number" name="rebounds" min="0" value="<?php echo $_GET['rebounds']?>" required><br>
+        <input type="number" name="rebounds" min="0" value="<?php if(isset($_GET['rebounds'])) {echo $_GET['rebounds']; }?>" required><br>
         <input type="submit" value="Actualizar Datos">
     </form>
 </body>

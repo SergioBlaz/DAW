@@ -1,0 +1,33 @@
+body{
+    background-color: sandybrown;
+    text-align: center;
+}
+input[type="text"]{
+    margin-top:15px;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+th{
+    padding: 0 15px 15px 15px;
+}
+td{
+    padding: 0 15px 0 15px;
+}
+td { 
+    border: solid 1px wheat; 
+    background-color: wheat;
+}
+tr:last-child td:first-child { 
+    border-bottom-left-radius: 10px; 
+    border-top-left-radius: 10px;
+}
+tr:last-child td:last-child { 
+    border-bottom-right-radius: 10px; 
+    border-top-right-radius: 10px;
+}

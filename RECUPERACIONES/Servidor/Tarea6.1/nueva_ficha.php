@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Jugador</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php require 'cabezera.php'; ?>
@@ -23,7 +24,7 @@
             <input type="number" name="asist" min="0" value="0" required><br>
             <label for="rebounds">Rebotes: </label>
             <input type="number" name="rebounds" min="0" value="0" required><br>
-            <input type="submit" value="Guardar Datos">
+            <input type="submit" class="-btn-ficha" value="Añadir">
         </form>
     </div>
 </body>

@@ -1,0 +1,15 @@
+h2, h3, div{
+    text-align: center;
+}
+body{
+    background-color: burlywood;
+}
+a:hover{
+    color:purple
+}
+a:visited{
+    color:#FFF
+}
+p{
+    margin-top: 25px;
+}
