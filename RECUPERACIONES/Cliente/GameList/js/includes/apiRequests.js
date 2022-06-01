@@ -32,10 +32,9 @@ export const getGamesByName = async (name) => {
 
 export const getGameById = async (name, id) => {
     const apiResponse = await fetch(
-    `https://api.rawg.io/api/games?key=${apiKey}&search=${name}&search_exact=true&metacritic=10,100&page=1&page_size=10`,
+    `https://api.rawg.io/api/games?key=${apiKey}&search=${name}&metacritic=10,100&page=1&page_size=10`,
     )
     const apiJson = await apiResponse.json()
-    
     //Map the results by name and and check if the id matches, then return only one game
     let gameAdd = {}
     let genres = []
@@ -57,5 +56,6 @@ export const getGameById = async (name, id) => {
             }
         }
     })
+    
     return gameAdd
 }
