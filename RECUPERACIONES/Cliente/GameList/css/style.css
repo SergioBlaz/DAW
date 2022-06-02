@@ -19,11 +19,12 @@ body{
 .profilePic{
     border-radius: 50%;
 }
-.logout{
+.logout, .login{
     height: 32px;
     margin:15px 25px 0 0;
+    margin-left: auto;
 }
-.logout:hover{
+.logout:hover, .login:hover{
     cursor: pointer;
 }
 #header-title{
@@ -71,6 +72,7 @@ body{
 #myGames:hover{
     background-color: #ffc14e;
     color: #000;
+    cursor: pointer;
 }
 /*USER GAMES*/
 #games-container, #wishlist-container, #api-container{
